@@ -343,3 +343,119 @@ header nav {
     width: 100%;
     height: 80%;
 }
+
+.divTools{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 150vh;
+    margin-top: 15%;
+}
+
+.divTools h1{
+    font-size: 3rem;
+    color: #CE9E23;
+}
+
+.divtoolsandguitar{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns:repeat(3,1fr) ;
+    width:100%;
+    height: 100%;
+
+    grid-template-areas: "chord gui sim"
+                         "empty quiz empty1";
+}
+
+.chords{
+    grid-area: chord;
+    width:100%;
+    height: 85%;
+    margin-left: 10%;
+    margin-top: 20%;
+}
+
+.guitar{
+    grid-area: gui;
+    width:100%;
+    height: 95%;
+    
+}
+
+.guitar img{
+    grid-area: gui;
+    width:60%;
+    
+}
+
+.simulator{
+    grid-area: sim;
+    width:100%;
+    height: 85%;
+    margin-left: -10%;
+    margin-top: 20%;
+}
+
+.quiz{
+    grid-area: quiz;
+    width:100%;
+    height: 100%;
+    
+}
+
+.itemTools{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.divCardTools{
+    width: 60%;
+    height: 60%;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.divCardTools h2{
+    margin: 0;
+    margin-bottom: 10%;
+    margin-top: 2%;
+    color: black;
+    font-weight: 700;
+    font-size: 1.9rem;
+    text-align: start;
+}
+.divCardTools p{
+    margin: 0;
+    color: black;
+    font-weight: 700;
+    padding: 0 40px;
+    font-size: 1.1rem;
+}
+
+.cardChord{
+    background-color:#F0D48A ;
+}
+
+.cardSimulator{
+    background-color: #8AF0BF;
+}
+
+.cardQuiz{
+    background-color: #ABF08A;
+}
+
+.buttonCardTools{
+    position:relative;
+    z-index: 1;
+    background-color: white;
+    width: 50%;
+    height: 70%;
+    top: 20%;
+    left: -20%
+}
