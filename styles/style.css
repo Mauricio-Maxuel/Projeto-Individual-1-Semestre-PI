@@ -226,6 +226,8 @@ header nav {
     align-items: center;
 }
 
+
+
 .cardBenefits{
     position: relative;
     display: flex;
@@ -238,8 +240,10 @@ header nav {
     background: rgba(83, 75, 59, 0.48);
     box-shadow: 0px 4px 4px rgba(143, 133, 36, 0.42);
     border-radius: 8px;
+    transition: 500ms;
 }
 
+ 
 .cardBenefits h2,.cardBenefits p{
     color: white;
     text-align: center;
@@ -263,16 +267,59 @@ header nav {
     left: -10%;
 }
 
+
 .cardBenefits .imgMore{
     cursor: pointer;
     margin-bottom: 3%;
     transition: 500ms;
+    
 }
 
 .cardBenefits .imgMore:hover{
     transform:translate(0,20%);
     filter: blur(1px) grayscale(100%);
 }
+
+/* classe do aumento do texto */
+.cardBenefitsactive{
+    position: relative;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    height:120%;
+    padding: 0 2%;
+    background: rgba(83, 75, 59, 0.48);
+    box-shadow: 0px 4px 4px rgba(143, 133, 36, 0.42);
+    border-radius: 8px;
+    transition: 500ms;
+}
+.cardBenefitsactive .imgMoreActive{
+    cursor: pointer;
+    margin-bottom: 3%;
+    transition: 500ms;
+    transform: rotate(180deg);
+}
+
+.cardBenefitsactive .imgMoreActive:hover{
+    filter: blur(1px) grayscale(100%);
+}
+
+.cardBenefitsactive h2,.cardBenefitsactive p{
+    color: white;
+    text-align: center;
+}
+.cardBenefitsactive h2{
+    text-align: center;
+}
+
+.cardBenefitsactive p{
+    height: 30%;
+    margin-bottom: 50%;
+}
+
+/*  */
 
 .learnMusics{
     display: flex;
@@ -349,7 +396,7 @@ header nav {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 150vh;
+    height: 180vh;
     margin-top: 15%;
 }
 
@@ -358,104 +405,66 @@ header nav {
     color: #CE9E23;
 }
 
-.divtoolsandguitar{
-    display: grid;
-    grid-template-rows: repeat(2,1fr);
-    grid-template-columns:repeat(3,1fr) ;
-    width:100%;
-    height: 100%;
-
-    grid-template-areas: "chord gui sim"
-                         "empty quiz empty1";
-}
-
-.chords{
-    grid-area: chord;
-    width:100%;
-    height: 85%;
-    margin-left: 10%;
-    margin-top: 20%;
-}
-
-.guitar{
-    grid-area: gui;
-    width:100%;
-    height: 95%;
-    
-}
-
-.guitar img{
-    grid-area: gui;
-    width:60%;
-    
-}
-
-.simulator{
-    grid-area: sim;
-    width:100%;
-    height: 85%;
-    margin-left: -10%;
-    margin-top: 20%;
-}
-
-.quiz{
-    grid-area: quiz;
-    width:100%;
-    height: 100%;
-    
-}
-
-.itemTools{
+.divToolsTop{
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
 }
 
 .divCardTools{
-    width: 60%;
-    height: 60%;
-    background-color: white;
-    border-radius: 30px;
     display: flex;
     flex-direction: column;
+    width: 15%;
+    height: 35vh;
+    padding: 2%;
+    background-color: white;
+    border-radius: 30px;
+}
+.guitar{
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.divCardTools h2{
+.guitar img{
+    width: 80%;
+    margin-bottom: 10%;
+}
+.cardChord h2{
     margin: 0;
     margin-bottom: 10%;
-    margin-top: 2%;
-    color: black;
-    font-weight: 700;
-    font-size: 1.9rem;
-    text-align: start;
 }
-.divCardTools p{
+.cardChord p{
     margin: 0;
-    color: black;
-    font-weight: 700;
-    padding: 0 40px;
-    font-size: 1.1rem;
+    margin-bottom: 15%;
 }
 
+.buttonCardTools{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 20%;
+    border-radius: 10px;
+    background-color: white;
+    transition: 500ms;
+}
+.buttonCardTools:hover{
+    transform: translate(10%,0);
+}
+
+.buttonCardTools img{
+    transform: rotate(-90deg);
+    width: 50%;
+    filter: brightness(.4);
+}
 .cardChord{
     background-color:#F0D48A ;
 }
 
 .cardSimulator{
-    background-color: #8AF0BF;
+    background-color:#8AF0BF ;
 }
-
 .cardQuiz{
     background-color: #ABF08A;
 }
 
-.buttonCardTools{
-    position:relative;
-    z-index: 1;
-    background-color: white;
-    width: 50%;
-    height: 70%;
-    top: 20%;
-    left: -20%
-}
