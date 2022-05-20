@@ -132,6 +132,8 @@ header nav {
 }
 
 .btnGradient {
+    float: left;
+    margin-right: 5%;
     width: 25%;
     padding: 3% 0;
     font-size: 1.1rem;
@@ -139,11 +141,19 @@ header nav {
     background: linear-gradient(93.03deg, #CFC44B 2.51%, rgba(36, 34, 17, 0.66) 65.11%);
     color: white;
     font-weight: 300;
+    transition: 1000ms;
     border: none;
     cursor: pointer;
 }
 
+.btnGradient:hover {
+    background: linear-gradient(93.03deg, #CFC44B 2.51%, rgba(36, 34, 17, 0.66) 80.11%);
+}
 .btnSimulador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
     width: 25%;
     padding: 3% 0;
     margin-left: 5%;
@@ -151,8 +161,16 @@ header nav {
     font-weight: 300;
     color: white;
     background-color: transparent;
-    border: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 500ms;
+    border-radius: 10px;
 }
+
+.btnSimulador:hover {
+    background-color: rgba(27, 27, 25, 0.66);
+}
+
 
 .divImgMusician {
     grid-area: musician;
