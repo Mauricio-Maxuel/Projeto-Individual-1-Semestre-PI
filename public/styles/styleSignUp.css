@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100vw;
+    /* width: 98.78vw; */
+    font-family: 'Nunito', sans-serif;
+    background-color: #E5E5E5;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #1c1c1d;
+    border-radius: 20px;
+}
+
+.divContentSignUp {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.divSelectYourInstrument {
+    height: 100%;
+    width: 100%;
+    background-color: #936161;
+}
+
+.divSignUp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divSignUp h1 {
+    color:rgba(9, 55, 67, 0.688);
+}
+
+.divsInputs{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+}
+
+.iconInputsLabel1{
+    position: absolute;
+    right: 37%;
+    top: 18%;
+    margin: 0;
+    padding: 0;
+}
+
+.iconInputsLabel2{
+    position: absolute;
+    right: 37%;
+    top: 31.3%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.iconInputsLabel3{
+    position: absolute;
+    right: 37%;
+    top: 44%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.iconInputsLabel4{
+    position: absolute;
+    right: 37%;
+    top: 57.3%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.iconInputsLabelAcept{
+    position: relative;
+    right: 26%;
+    top: 45%;
+}
+.inputSign {
+    margin-bottom: 5%;
+    font-size: 1rem;
+    color: rgba(11, 70, 84);
+    width: 50%;
+    padding: 2% 2% 2% 7%;
+    border-radius: 10px;
+    border: 2px solid rgba(11, 70, 84, 0.25);
+    outline: transparent;
+    
+}
+
+.inputError {
+    /* display:flex ;
+    justify-content: center;
+    align-items: center; */
+    margin-bottom: 1%;
+    font-size: 1rem;
+    width: 100%;
+    color: rgba(11, 70, 84);
+    width: 50%;
+    padding: 2% 2% 2% 7%;
+    border-radius: 10px;
+    border: 2px solid red;
+    outline: red;
+}
+
+/* input sem erro */
+.msgError{
+    display: none;
+    position:fixed;
+    font-size: 1.1rem;
+    left: 60.5%;
+    margin: 0;
+    margin-top: 3.5%;
+    padding: 0;
+    border: 0;
+}
+
+.msgErrorActive{
+    position:fixed;
+    font-size: 1.1rem;
+    left: 60.5%;
+    margin: 0;
+    margin-top: 4.7%;
+    padding: 0;
+    border: 0;
+    color: red;
+}
+.simbolError{
+    display: none;
+    position: relative;
+    right: -25%;
+    top: -7%;
+    width: 4%;
+}
+
+/* inputAcept */
+.inputAcept {
+    /* display:flex ;
+    justify-content: center;
+    align-items: center; */
+    margin-bottom: 1%;
+    font-size: 1rem;
+    width: 100%;
+    color: rgba(11, 70, 84);
+    width: 50%;
+    padding: 2% 2% 2% 7%;
+    border-radius: 10px;
+    border: 2px solid green;
+    outline: green;
+}
+
+.msgErrorAcept{
+    position:fixed;
+    font-size: 1.1rem;
+    left: 60.5%;
+    margin: 0;
+    margin-top: 4.7%;
+    padding: 0;
+    border: 0;
+    color: green;
+}
+
+.divSignUp h3{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.divSignUp a{
+    color: #736F45;
+    text-decoration: none;
+}
+
+.divSignUp a:hover{
+    text-decoration: underline;
+}
+
+.buttonSignUp {
+    font-size: 1.1rem;
+    color: white;
+    background-color: #736F45;
+    margin-top: 4%;
+    width: 60%;
+    height: 8%;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 2.9566px 2.9566px rgba(0, 0, 0, 0.25), inset 0px 1.4783px 2.9566px rgba(255, 255, 255, 0.25), inset 0px -1.4783px 2.9566px rgba(0, 0, 0, 0.25);
+    border-radius: 11.8264px;
+    margin-bottom: 5%;
+    cursor: pointer;
+}
+
+
+.buttonSignUp:hover {
+    font-size: 1.1rem;
+    color: white;
+    background-color: #59563b;
+    margin-top: 4%;
+    width: 60%;
+    height: 8%;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0px 2.9566px 2.9566px rgba(0, 0, 0, 0.25), inset 0px 1.4783px 2.9566px rgba(255, 255, 255, 0.25), inset 0px -1.4783px 2.9566px rgba(0, 0, 0, 0.25);
+    border-radius: 11.8264px;
+    margin-bottom: 5%;
+}

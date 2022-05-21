@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/imgs/YMusicFontColor.png" type="image/x-icon">
+    <!-- links -->
+    <!-- link dos scripts js -->
+    <script src="js/funcoes.js"></script>
+
+    <!-- link css -->
+    <link rel="stylesheet" href="styles/styleSignUp.css">
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>YMusic | Cadastro</title>
+</head>
+
+<body>
+    <div class="divContentSignUp">
+        <div class="divSelectYourInstrument">
+            instrumento que o usuario vai escolher
+        </div>
+        <div class="divSignUp">
+            <h1>Criar Conta</h1>
+
+
+            <div class="divsInputs">
+                <img class="iconInputsLabel1" src="assets/imgs/VectorIconUserinp.png" alt="">
+                <input maxlength="70" class="inputSign" id="nome_input" placeholder="Nome:" type="text">
+                <p id="msgError1" class="msgError">text</p>
+            </div>
+            <img id="imgError1" class="simbolError" src="assets/imgs/Error.png" alt="">
+
+            <div class="divsInputs">
+                <img class="iconInputsLabel2" src="assets/imgs/VectorEmaiInp.png" alt="">
+                <input class="inputSign" id="email_input" placeholder="E-mail:" type="text">
+                <p id="msgError2" class="msgError">text</p>
+            </div>
+            <img id="imgError2" class="simbolError" src="assets/imgs/Error.png" alt="">
+
+            <div class="divsInputs">
+                <img class="iconInputsLabel3" src="assets/imgs/VectorpasswordInp.png" alt="">
+                <input class="inputSign" id="senha_input" placeholder="Senha:" type="password">
+                <p id="msgError3" class="msgError">text</p>
+            </div>
+            <img id="imgError3" class="simbolError" src="assets/imgs/Error.png" alt="" >
+
+            <div class="divsInputs">
+                <img class="iconInputsLabel4" src="assets/imgs/VectorpasswordInp.png" alt="">
+                <input class="inputSign" id="confirmacao_senha_input" placeholder="Confirmar senha:" type="password">
+                <p id="msgError4" class="msgError">text</p>
+            </div>
+            <img id="imgError4" class="simbolError" src="assets/imgs/Error.png" alt="">
+
+
+            <button onclick="cadastrar()" class="buttonSignUp">Cadastrar</button>
+
+            <h3>já tem uma conta? <a href="">Conecte-se</a> </h3>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function cadastrar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        var nomeVerifi = document.getElementById("nome_input");
+        var EmailVerifi = document.getElementById("email_input");
+        var senhaVerifi = document.getElementById("senha_input");
+        var confirmacaoSenhaVerifi = document.getElementById("confirmacao_senha_input");
+
+        var msgError1 = document.getElementById("msgError1")
+        var msgError2 = document.getElementById("msgError2")
+        var msgError3 = document.getElementById("msgError3")
+        var msgError4 = document.getElementById("msgError4")
+
+        // validação do nome
+        if (nomeVar == "") {
+            nome_input.className = "inputError"
+            imgError1.style.display = "flex"
+            msgError1.className = "msgErrorActive"
+            msgError1.innerHTML = "Este campo é de preenchimento obrigatório"
+            // finalizarAguardar()
+            // return false;
+
+        }else if(nomeVar.length < 3){
+            nome_input.className = "inputError"
+            imgError1.style.display = "flex"
+            msgError1.className = "msgErrorActive"
+            msgError1.innerHTML = "Tamanho inválido"
+        }
+        // nome válido
+        else {
+            nome_input.className = "inputAcept"
+            imgError1.style.display = "flex"
+            imgError1.src = "assets/imgs/sucessoIcon.png"
+            msgError1.className = "msgErrorAcept"
+            msgError1.innerHTML = `Nome válido`
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Validação do email   
+        if (emailVar == "") {
+            email_input.className = "inputError"
+            imgError2.style.display = "flex"
+            msgError2.className = "msgErrorActive"
+            msgError2.innerHTML = "Este campo é de preenchimento obrigatório"
+            // finalizarAguardar()
+            // return false;
+        }else if(emailVar.indexOf("@") < 0){
+            email_input.className = "inputError"
+            imgError2.style.display = "flex"
+            msgError2.className = "msgErrorActive"
+            msgError2.innerHTML = `insira @ no E-Mail`
+             // finalizarAguardar()
+            // return false;
+        }else if(emailVar.indexOf(".com")<0){
+            email_input.className = "inputError"
+            imgError2.style.display = "flex"
+            msgError2.className = "msgErrorActive"
+            msgError2.innerHTML = `insira .com `
+            // finalizarAguardar()
+            // return false;
+        }else if(emailVar.indexOf("@")+5 > emailVar.indexOf(".com")){
+            email_input.className = "inputError"
+            imgError2.style.display = "flex"
+            msgError2.className = "msgErrorActive"
+            msgError2.innerHTML = `insira um E-mail válido`
+            // finalizarAguardar()
+            // return false;
+        }
+        else if(emailVar.indexOf("@") > emailVar.indexOf(".com")){
+            email_input.className = "inputError"
+            imgError2.style.display = "flex"
+            msgError2.className = "msgErrorActive"
+            msgError2.innerHTML = `insira @ antes do .com`
+            // finalizarAguardar()
+            // return false;
+        }else if(emailVar.indexOf("@") < 4){
+            email_input.className = "inputError"
+            imgError2.style.display = "flex"
+            msgError2.className = "msgErrorActive"
+            msgError2.innerHTML = `insira um E-mail válido`
+            // finalizarAguardar()
+            // return false;
+        }
+        // E-mail aceito
+        else {
+            email_input.className = "inputAcept"
+            imgError2.style.display = "flex"
+            imgError2.src = "assets/imgs/sucessoIcon.png"
+            msgError2.className = "msgErrorAcept"
+            msgError2.innerHTML = `Email válido`
+            // setInterval(sumirMensagem, 5000)
+        }
+
+
+        // validação da senha
+        if (senhaVar == "") {
+            senha_input.className = "inputError"
+            imgError3.style.display = "flex"
+            msgError3.className = "msgErrorActive"
+            msgError3.innerHTML = "Este campo é de preenchimento obrigatório"
+            // finalizarAguardar()
+            // return false;
+        }else if(senhaVar.length < 4){
+            senha_input.className = "inputError"
+            imgError3.style.display = "flex"
+            msgError3.className = "msgErrorActive"
+            msgError3.innerHTML = "Insira uma senha maior"
+        }
+        else {
+            senha_input.className = "inputAcept"
+            imgError3.style.display = "flex"
+            imgError3.src = "assets/imgs/sucessoIcon.png"
+            msgError3.className = "msgErrorAcept"
+            msgError3.innerHTML = `Senha válida`
+            // setInterval(sumirMensagem, 5000)
+        }
+
+
+        // validação da confirmação de senha
+        if (confirmacaoSenhaVar == "") {
+            confirmacao_senha_input.className = "inputError"
+            imgError4.style.display = "flex"
+            msgError4.className = "msgErrorActive"
+            msgError4.innerHTML = "Este campo é de preenchimento obrigatório"
+            // finalizarAguardar()
+            // return false;
+        } else if(senhaVar != confirmacaoSenhaVar){
+            confirmacao_senha_input.className = "inputError"
+            imgError4.style.display = "flex"
+            msgError4.className = "msgErrorActive"
+            msgError4.innerHTML = "Insira a senha correta"
+        }
+        else {
+            confirmacao_senha_input.className = "inputAcept"
+            imgError4.style.display = "flex"
+            imgError4.src = "assets/imgs/sucessoIcon.png"
+            msgError4.className = "msgErrorAcept"
+            msgError4.innerHTML = `Senha correta`
+            setInterval(sumirMensagem, 5000)
+        }
+
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+</script>
