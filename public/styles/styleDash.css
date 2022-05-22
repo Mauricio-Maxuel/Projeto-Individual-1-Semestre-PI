@@ -1,0 +1,227 @@
+body{
+    display: flex;
+}
+
+.divMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    height: 150vh;
+    /* background-color: rebeccapurple; */
+}
+
+.divContentMain{
+    width:90%;
+    height: 90%;
+    /* background-color: green; */
+}
+
+.itensUser{
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+    align-items: center;
+}
+.divUserDash{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    /* background-color: red; */
+}
+
+.userIMGDash{
+    margin-left: 10%;
+    margin-right: 3%;
+    width: 7%;
+    height: 5%;
+}
+
+.nameUser{
+    font-size: 1.5rem;
+    color: rgb(206, 213, 213);
+}
+
+.leaveDoor{
+    width: 4%;
+    cursor: pointer;
+}
+
+
+.divBannerDash{
+    display: flex;
+    width: 100%;
+    height: 25%;
+}
+
+.divImgBanner{
+    width: 68%;
+    height: 100%;
+    background-image: url(../assets/imgsDash/guitarBanner.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 50% 80%;
+    /* filter: opacity(70%); */
+    display: flex;
+    flex-direction: column;
+    border-radius: 35px;
+    color: white;
+    margin-right: 3%;
+}
+.divImgBanner h2{
+    margin: 0;
+    margin-top: 4%;
+    margin-left: 6%;
+    margin-bottom: 2%;
+}
+.divImgBanner p{
+    margin: 0;
+    margin-left: 6%;
+    margin-bottom: 5%;
+    width: 50%;
+}
+.divImgBanner .btnBanner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 9%;
+    height: 25%;
+    margin-left: 6%;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.btnBanner img{
+    width: 40%;
+    height: 30%;
+}
+
+.divImgBanner .btnBanner:hover{
+    background-color: rgb(198, 198, 198);
+    transform: scale(1.1,1.1);
+}
+
+.divGoCommunity{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(255, 51, 0);
+    background-image: url(../assets/imgsDash/clave-de-sol.png);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 10%;
+    background-size: 40% 50%;
+    border-radius: 35px;
+    color: rgb(76, 4, 4);
+}
+
+.divContentGoCommunity{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    width: 80%;
+    height: 50%;
+    font-size: 0.7rem;
+}
+.btnGoCommunity{
+    border-radius: 30px;
+    height: 48%;
+    width: 45%;
+    border: none;
+    cursor: pointer;
+    transition: 500ms;
+}
+.btnGoCommunity:hover{
+    background-color: rgb(198, 198, 198);
+    transform: scale(1.05,1.05);
+}
+.divDashBoard{
+    width: 70%;
+    height:40% ;
+    
+}
+
+.instrumentsPreferred{
+    background-color: rgb(50, 50, 51);
+    padding: 0% 2%;
+    height: 45%;
+    border-radius: 10px;
+}
+
+.instrumentsPreferred h2{
+    margin-top: 10%;
+    color: rgb(252, 252, 252);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.instrumentsPreferred span{
+    margin-top: 10%;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.divMyDash{
+    width: 100%;
+    height: 90%;
+}
+
+.usersRegistered{
+    background-color: rgb(50, 50, 51);
+    padding: 0% 2%;
+    height: 45%;
+    border-radius: 10px;
+}
+.usersRegistered h2{
+    margin-top: 10%;
+    color: rgb(252, 252, 252);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.usersRegistered span{
+    margin-top: 10%;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.divRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    width: 30vw;
+    height: 130vh;
+}
+
+.ItensCardRight{
+    padding: 3%;
+    border-radius: 30px;
+    width: 70%;
+    height: 25%;
+    background-color: rgb(23, 23, 23);
+    
+}
+
+.ItensCardRight h3{
+    color: white;
+    font-size: 1.3rem;
+}
+
+.ItensCardRight p{
+    color: white;
+}
+
+.btnCourses{
+    width:18%;
+    height:25%
+}

@@ -61,7 +61,7 @@
 
             <button onclick="cadastrar()" class="buttonSignUp">Cadastrar</button>
 
-            <h3>já tem uma conta? <a href="">Conecte-se</a> </h3>
+            <h3>já tem uma conta? <a href="login.html">Conecte-se</a> </h3>
         </div>
     </div>
 </body>
@@ -97,13 +97,15 @@
             msgError1.className = "msgErrorActive"
             msgError1.innerHTML = "Este campo é de preenchimento obrigatório"
             // finalizarAguardar()
-            // return false;
+            return false;
 
         }else if(nomeVar.length < 3){
             nome_input.className = "inputError"
             imgError1.style.display = "flex"
             msgError1.className = "msgErrorActive"
             msgError1.innerHTML = "Tamanho inválido"
+            // finalizarAguardar()
+            return false;
         }
         // nome válido
         else {
@@ -122,28 +124,32 @@
             msgError2.className = "msgErrorActive"
             msgError2.innerHTML = "Este campo é de preenchimento obrigatório"
             // finalizarAguardar()
-            // return false;
+            return false;
+
         }else if(emailVar.indexOf("@") < 0){
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
             msgError2.innerHTML = `insira @ no E-Mail`
-             // finalizarAguardar()
-            // return false;
+            //  finalizarAguardar()
+            return false;
+
         }else if(emailVar.indexOf(".com")<0){
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
             msgError2.innerHTML = `insira .com `
             // finalizarAguardar()
-            // return false;
+            return false;
+
         }else if(emailVar.indexOf("@")+5 > emailVar.indexOf(".com")){
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
             msgError2.innerHTML = `insira um E-mail válido`
             // finalizarAguardar()
-            // return false;
+            return false;
+
         }
         else if(emailVar.indexOf("@") > emailVar.indexOf(".com")){
             email_input.className = "inputError"
@@ -151,14 +157,16 @@
             msgError2.className = "msgErrorActive"
             msgError2.innerHTML = `insira @ antes do .com`
             // finalizarAguardar()
-            // return false;
+            return false;
+
+
         }else if(emailVar.indexOf("@") < 4){
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
             msgError2.innerHTML = `insira um E-mail válido`
             // finalizarAguardar()
-            // return false;
+            return false;
         }
         // E-mail aceito
         else {
@@ -178,12 +186,14 @@
             msgError3.className = "msgErrorActive"
             msgError3.innerHTML = "Este campo é de preenchimento obrigatório"
             // finalizarAguardar()
-            // return false;
+            return false;
         }else if(senhaVar.length < 4){
             senha_input.className = "inputError"
             imgError3.style.display = "flex"
             msgError3.className = "msgErrorActive"
             msgError3.innerHTML = "Insira uma senha maior"
+            // finalizarAguardar()
+            return false;
         }
         else {
             senha_input.className = "inputAcept"
@@ -202,12 +212,16 @@
             msgError4.className = "msgErrorActive"
             msgError4.innerHTML = "Este campo é de preenchimento obrigatório"
             // finalizarAguardar()
-            // return false;
+            return false;
+
         } else if(senhaVar != confirmacaoSenhaVar){
             confirmacao_senha_input.className = "inputError"
             imgError4.style.display = "flex"
             msgError4.className = "msgErrorActive"
             msgError4.innerHTML = "Insira a senha correta"
+            // finalizarAguardar()
+            return false;
+
         }
         else {
             confirmacao_senha_input.className = "inputAcept"
@@ -215,7 +229,7 @@
             imgError4.src = "assets/imgs/sucessoIcon.png"
             msgError4.className = "msgErrorAcept"
             msgError4.innerHTML = `Senha correta`
-            setInterval(sumirMensagem, 5000)
+            // setInterval(sumirMensagem, 5000)
         }
 
 
@@ -237,14 +251,13 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                // cardErro.style.display = "block";
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
-                    window.location.href = "index.html";
+                    window.location.href = "login.html";
                 }, "2000")
-
+                
                 limparFormulario();
                 finalizarAguardar();
             } else {
