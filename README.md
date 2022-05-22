@@ -11,9 +11,10 @@ O projeto ainda está em desenvolvimento e as próximas atualizações e funcion
 -  Landing Page
 -  Cadastro
 -  Login
--  Quiz sobre qual instrumento gosta
+-  escolha do instrumento que gosta
 -  biblioteca de acordes
 -  Simulador de violão
+-  chat entre usuários
   <!-- -  ✔ -->
 
 [⬆ Voltar ao topo](#Projeto-Individual-1-Semestre-PI)<br>
