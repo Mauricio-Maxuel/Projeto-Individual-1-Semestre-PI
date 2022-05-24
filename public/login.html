@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="assets/imgs/YMusicFontColor.png" type="image/x-icon">
     <!-- links -->
     <!-- link dos scripts js -->
-    <script src="js/funcoes.js"></script>
+    <script src="./js/funcoes.js"></script>
 
     <!-- link css -->
     <link rel="stylesheet" href="styles/styleSignUp.css">
@@ -178,12 +178,12 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
 
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = json.emailUsuario;
+                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
-                        window.location = "index.html";
+                        window.location = "dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

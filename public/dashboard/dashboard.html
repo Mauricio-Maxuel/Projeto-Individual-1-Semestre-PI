@@ -10,7 +10,7 @@
     <!-- link do chartJS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- link dos scripts js -->
-    <script src="js/funcoes.js"></script>
+    <script src="../js/funcoes.js"></script>
 
     <!-- link css -->
     <link rel="stylesheet" href="../styles/style.css">
@@ -24,15 +24,15 @@
     <title>YMusic | Comunidade</title>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <div class="divMain">
         <div class="divContentMain">
             <div class="divUserDash">
                 <div class="itensUser">
                     <img class="userIMGDash" src="../assets/imgsDash/userDash.png" alt="">
-                    <h3 class="nameUser">Mauricio</h3>
+                    <h3 class="nameUser" id="b_usuario">Mauricio</h3>
                 </div>
-                <img class="leaveDoor" src="../assets/imgsDash/open-exit-door.png" alt="">
+                <img onclick="limparSessao()" class="leaveDoor" src="../assets/imgsDash/open-exit-door.png" alt="">
             </div>
 
             <div class="divBannerDash">

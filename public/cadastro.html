@@ -24,12 +24,15 @@
 <body>
     <div class="divContentSignUp">
         <div class="divSelectYourInstrument">
-            instrumento que o usuario vai escolher
+            <div class="iconBack"><a href="index.html"><img src="assets/imgs/backIcon.png" alt=""></a></div>
+            <div class="contentYourInstrument">
+            
+                <input type="text" id="inputInstrumento"></div>
         </div>
+
+
         <div class="divSignUp">
             <h1>Criar Conta</h1>
-
-
             <div class="divsInputs">
                 <img class="iconInputsLabel1" src="assets/imgs/VectorIconUserinp.png" alt="">
                 <input maxlength="70" class="inputSign" id="nome_input" placeholder="Nome:" type="text">
@@ -49,7 +52,7 @@
                 <input class="inputSign" id="senha_input" placeholder="Senha:" type="password">
                 <p id="msgError3" class="msgError">text</p>
             </div>
-            <img id="imgError3" class="simbolError" src="assets/imgs/Error.png" alt="" >
+            <img id="imgError3" class="simbolError" src="assets/imgs/Error.png" alt="">
 
             <div class="divsInputs">
                 <img class="iconInputsLabel4" src="assets/imgs/VectorpasswordInp.png" alt="">
@@ -78,6 +81,7 @@
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var instrumentoVar = inputInstrumento.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         var nomeVerifi = document.getElementById("nome_input");
@@ -99,7 +103,7 @@
             // finalizarAguardar()
             return false;
 
-        }else if(nomeVar.length < 3){
+        } else if (nomeVar.length < 3) {
             nome_input.className = "inputError"
             imgError1.style.display = "flex"
             msgError1.className = "msgErrorActive"
@@ -126,7 +130,7 @@
             // finalizarAguardar()
             return false;
 
-        }else if(emailVar.indexOf("@") < 0){
+        } else if (emailVar.indexOf("@") < 0) {
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
@@ -134,7 +138,7 @@
             //  finalizarAguardar()
             return false;
 
-        }else if(emailVar.indexOf(".com")<0){
+        } else if (emailVar.indexOf(".com") < 0) {
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
@@ -142,7 +146,7 @@
             // finalizarAguardar()
             return false;
 
-        }else if(emailVar.indexOf("@")+5 > emailVar.indexOf(".com")){
+        } else if (emailVar.indexOf("@") + 5 > emailVar.indexOf(".com")) {
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
@@ -151,7 +155,7 @@
             return false;
 
         }
-        else if(emailVar.indexOf("@") > emailVar.indexOf(".com")){
+        else if (emailVar.indexOf("@") > emailVar.indexOf(".com")) {
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
@@ -160,7 +164,7 @@
             return false;
 
 
-        }else if(emailVar.indexOf("@") < 4){
+        } else if (emailVar.indexOf("@") < 4) {
             email_input.className = "inputError"
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
@@ -187,7 +191,7 @@
             msgError3.innerHTML = "Este campo é de preenchimento obrigatório"
             // finalizarAguardar()
             return false;
-        }else if(senhaVar.length < 4){
+        } else if (senhaVar.length < 4) {
             senha_input.className = "inputError"
             imgError3.style.display = "flex"
             msgError3.className = "msgErrorActive"
@@ -214,7 +218,7 @@
             // finalizarAguardar()
             return false;
 
-        } else if(senhaVar != confirmacaoSenhaVar){
+        } else if (senhaVar != confirmacaoSenhaVar) {
             confirmacao_senha_input.className = "inputError"
             imgError4.style.display = "flex"
             msgError4.className = "msgErrorActive"
@@ -244,7 +248,9 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
+                instrumentoServer:instrumentoVar
+                
             })
         }).then(function (resposta) {
 
@@ -257,7 +263,7 @@
                 setTimeout(() => {
                     window.location.href = "login.html";
                 }, "2000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {
