@@ -1,5 +1,33 @@
 var database = require("../database/config");
 
+
+function buscarQuantidadeIntrumentos() {
+
+    instrucaoSql = ''
+
+    if (process.env.AMBIENTE_PROCESSO == "producao") {
+        instrucaoSql = `select nomeInstrumento,count(fkInstrumento as "contagemIns" 
+                        from instrumento 
+                        join usuario on 
+                        instrumento.idinstrumento = usuario.fkinstrumento 
+                        group by nomeInstrumento;`;
+
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+        instrucaoSql = `select nomeInstrumento,count(fkInstrumento) as "contagemIns" 
+                        from instrumento 
+                        join usuario on 
+                        instrumento.idinstrumento = usuario.fkinstrumento 
+                        group by nomeInstrumento;`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 function buscarUltimasMedidas(idAquario, limite_linhas) {
 
     instrucaoSql = ''
@@ -30,6 +58,8 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+
 
 function buscarMedidasEmTempoReal(idAquario) {
 
@@ -64,5 +94,6 @@ function buscarMedidasEmTempoReal(idAquario) {
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarQuantidadeIntrumentos
 }

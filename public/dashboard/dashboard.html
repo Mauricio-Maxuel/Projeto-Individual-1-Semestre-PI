@@ -8,7 +8,9 @@
     <link rel="shortcut icon" href="../assets/imgs/YMusicFontColor.png" type="image/x-icon">
     <!-- links -->
     <!-- link do chartJS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
     <!-- link dos scripts js -->
     <script src="../js/funcoes.js"></script>
 
@@ -23,7 +25,6 @@
         rel="stylesheet">
     <title>YMusic | Comunidade</title>
 </head>
-
 <body onload="validarSessao()">
     <div class="divMain">
         <div class="divContentMain">
@@ -85,34 +86,135 @@
 
 </html>
 <script>
-    // chart1
-    const labels = [
-      'Violão',
-      'Piano',
-      'Violino',
-      'Flauta',
-      'Alaúde',
-    ];
+window.onload = obterDadosGrafico();
+verificar_autenticacao();
+
+function obterDadosGrafico() {
+
+        fetch(`/medidas/ultimosIntrumentos/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dados = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-violao',
+                    label: 'Violão',
+                    borderColor: '#32B9CD',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-violino',
+                    label: 'Violino',
+                    borderColor: '#FFF',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                }
+            ]
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.labels.push(registro.nomeIntrumento);
+            dados.datasets[0].data.push(registro.contagemIns);
+            // dados.datasets[1].data.push(registro.contagemIns);
+        }
+
+        console.log(JSON.stringify(dados));
+
+        var ctx = myChart.getContext('2d');
+        window.graficoBar = Chart.Bar(ctx, {
+            data: dados,
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-violao',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    }, {
+                        type: 'linear',
+                        display: false,
+                        position: 'right',
+                        id: 'y-violino',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        },
+
+                        gridLines: {
+                            drawOnChartArea: false,
+                        },
+                    }],
+                }
+            }
+        });
+    }
+
+  //    chart1
+  //   const labels = [
+  //     'Violão',
+  //     'Piano',
+  //     'Violino',
+  //     'Flauta',
+  //     'Alaúde',
+  //   ];
   
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30],
-      }]
-    };
+  //   const data = {
+  //     labels: labels,
+  //     datasets: [{
+  //       label: 'My First dataset',
+  //       backgroundColor: 'rgb(255, 99, 132)',
+  //       borderColor: 'rgb(255, 99, 132)',
+  //       data: [0, 10, 5, 2, 20, 30],
+  //     }]
+  //   };
   
-    const config = {
-      type: 'bar',
-      data: data,
-      options: {}
-    };
-    const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
+  //   const config = {
+  //     type: 'bar',
+  //     data: data,
+  //     options: {}
+  //   };
+  //   const myChart = new Chart(
+  //   document.getElementById('myChart'),
+  //   config
+  // );
 
 //   Chart2
 
