@@ -25,9 +25,119 @@
     <div class="divContentSignUp">
         <div class="divSelectYourInstrument">
             <div class="iconBack"><a href="index.html"><img src="assets/imgs/backIcon.png" alt=""></a></div>
+
+            <h2 class="textSelectYourInstrument">Selecione seu instrumento preferido</h2>
             <div class="contentYourInstrument">
-            
-                <input type="text" id="inputInstrumento"></div>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+                <label class="cardYourInstruments">
+                    <input name="itemIntruments" class="radioYourInstruments" id="inputInstrumento" value="1"
+                        type="radio" id="" checked>
+                    <span class="contentCardYourInstruments">
+                        <span class="nameOfInstruments">
+                            <h3>Violão</h3>
+                        </span>
+                        <span class="imgOfInstruments">
+                            <img src="assets/imgs/guitar.png" alt="">
+                        </span>
+                    </span>
+                </label>
+
+            </div>
+
+            <div class="yourLevel">
+
+            </div>
         </div>
 
 
@@ -63,7 +173,6 @@
 
 
             <button onclick="cadastrar()" class="buttonSignUp">Cadastrar</button>
-
             <h3>já tem uma conta? <a href="login.html">Conecte-se</a> </h3>
         </div>
     </div>
@@ -72,7 +181,6 @@
 </html>
 
 <script>
-
     function cadastrar() {
         // aguardar();
 
@@ -249,8 +357,8 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                instrumentoServer:instrumentoVar
-                
+                instrumentoServer: instrumentoVar
+
             })
         }).then(function (resposta) {
 
