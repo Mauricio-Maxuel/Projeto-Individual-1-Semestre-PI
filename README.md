@@ -14,7 +14,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações e funcion
 -  escolha do instrumento que gosta
 -  biblioteca de acordes
 -  Simulador de violão
--  chat entre usuários
+-  fórum entre usuários
+-  Dashboard
   <!-- -  ✔ -->
 
 [⬆ Voltar ao topo](#Projeto-Individual-1-Semestre-PI)<br>
