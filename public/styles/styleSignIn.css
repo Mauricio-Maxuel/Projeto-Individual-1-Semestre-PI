@@ -14,14 +14,12 @@
 }
 
 .divImgSignIN{
-    width: 50vw;
+    width:100vw;
     display: flex;
     align-items: center;
     background-color: #35352F;
     flex-direction: column;
 }
-
-
 
 .divImgSignIN img{
     width: 50vw;

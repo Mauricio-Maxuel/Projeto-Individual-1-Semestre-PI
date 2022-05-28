@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     width: 100%;
     /* Cor a definir */
-    background-color: #59563b;
+    background-color: #807B4D;
 }
 .contentYourInstrument{
     flex-wrap: wrap;
@@ -83,7 +83,15 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
+    transition:400ms;
 }
+
+.cardYourInstruments:hover{
+    border: 1px solid #33311F;
+   transform: translate(0%,-1%);
+}
+
+
 .radioYourInstruments{
     position: relative;
     margin: 0;
@@ -100,7 +108,6 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     margin-right: 10%;
     /* background-color: green; */
-    
 }
 .nameOfInstruments{
     display: flex;
@@ -124,9 +131,6 @@ body::-webkit-scrollbar-thumb {
 .imgOfInstruments img{
     width: 45%;
 }
-
-
-
 
 .divSignUp {
     width: 80%;

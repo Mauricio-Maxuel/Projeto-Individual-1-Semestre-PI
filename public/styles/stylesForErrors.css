@@ -1,0 +1,50 @@
+.divError{
+    position: absolute;
+    width: 10%;
+}
+
+.divError h3{
+    display: none;
+    position: fixed;
+    left: 65%;
+    bottom: 10%;
+    /* margin-top: 1000%; */
+    padding: 0;
+    border: 0;
+}
+
+
+
+.loading-div{
+    display: none;
+}
+
+.divError img{
+    position: fixed;
+    left: 75%;
+    bottom: 14%;
+    /* position: fixed;
+    left: 65%;
+    bottom: 10%;
+    margin-top: 1000%;
+    padding: 0;
+    border: 0; */
+    width: 80px;
+}
+
+ #mensagem_erro img {
+    /* display: none; */
+    position: relative;
+    left: 30%;
+    margin-top: 310%;
+    width: 50px;
+    bottom: -100%;
+ } 
+
+ /* .imgConfirmation{
+    position: relative;
+    left: 30%;
+    margin-top: 310%;
+    width: 50px;
+    bottom: -100%;
+ } */

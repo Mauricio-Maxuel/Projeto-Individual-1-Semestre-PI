@@ -35,6 +35,8 @@ function finalizarAguardar(texto) {
     divAguardar.style.display = "none";
 
     var divErrosLogin = document.getElementById("div_erros_login");
+    divErrosLogin.style.display = "flex"
+    divErrosLogin.style.color = "red"
     if (texto) {
         divErrosLogin.innerHTML = texto;
     }
@@ -42,13 +44,13 @@ function finalizarAguardar(texto) {
 
 
 // modal
-function mostrarModal() {
-    var divModal = document.getElementById("div_modal");
-    divModal.style.display = "flex";
-}
+// function mostrarModal() {
+//     var divModal = document.getElementById("div_modal");
+//     divModal.style.display = "flex";
+// }
 
-function fecharModal() {
-    var divModal = document.getElementById("div_modal");
-    divModal.style.display = "none";
-}
+// function fecharModal() {
+//     var divModal = document.getElementById("div_modal");
+//     divModal.style.display = "none";
+// }
 

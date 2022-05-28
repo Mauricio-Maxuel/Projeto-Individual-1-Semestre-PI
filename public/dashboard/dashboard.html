@@ -25,13 +25,14 @@
         rel="stylesheet">
     <title>YMusic | Comunidade</title>
 </head>
+
 <body onload="validarSessao()">
     <div class="divMain">
         <div class="divContentMain">
             <div class="divUserDash">
                 <div class="itensUser">
                     <img class="userIMGDash" src="../assets/imgsDash/userDash.png" alt="">
-                    <h3 class="nameUser" id="b_usuario">Mauricio</h3>
+                    <h3 class="nameUser" id="b_usuario"></h3>
                 </div>
                 <img onclick="limparSessao()" class="leaveDoor" src="../assets/imgsDash/open-exit-door.png" alt="">
             </div>
@@ -45,7 +46,8 @@
                 <div class="divGoCommunity">
                     <div class="divContentGoCommunity">
                         <h2>Conheça Nossa Biblioteca de acordes</h2>
-                        <button class="btnBanner btnGoCommunity"><img src="../assets/imgsDash/right-arrow.png" alt=""></button>
+                        <button class="btnBanner btnGoCommunity"><img src="../assets/imgsDash/right-arrow.png"
+                                alt=""></button>
                     </div>
                 </div>
             </div>
@@ -57,46 +59,55 @@
             </div>
             <div class="divDashBoard usersRegistered">
                 <h2>Quantidade de pessoas <span>Cadastradas<span></h2>
-                    <div class="divMyDash">
-                        <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
-                    </div>
+                <div class="divMyDash">
+                    <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+                </div>
             </div>
         </div>
 
-        
+
     </div>
     <div class="divRight">
-            <div class="ItensCardRight">
-                <h3>Fundamentos da teoria musical</h3>
-                <p>Aprenda os fundamentos para entender de fato o mundo da musica</p>
-                <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png" alt=""></button>
-            </div>
-            <div class="ItensCardRight">
-                <h3>Exercícios para melhor no violão</h3>
-                <p>Exercícios para melhora da técnica e confiança no violão.</p>
-                <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png" alt=""></button>
-            </div>
-            <div class="ItensCardRight">
-                <h3>Aprenda a trocar as cordas do seu violão</h3>
-                <p>não passe mais aperto e troque você mesmo.</p>
-                <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png" alt=""></button>
-            </div>
+        <div class="ItensCardRight">
+            <h3>Fundamentos da teoria musical</h3>
+            <p>Aprenda os fundamentos para entender de fato o mundo da musica</p>
+            <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
+                    alt=""></button>
+        </div>
+        <div class="ItensCardRight">
+            <h3>Exercícios para melhor no violão</h3>
+            <p>Exercícios para melhora da técnica e confiança no violão.</p>
+            <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
+                    alt=""></button>
+        </div>
+        <div class="ItensCardRight">
+            <h3>Aprenda a trocar as cordas do seu violão</h3>
+            <p>não passe mais aperto e troque você mesmo.</p>
+            <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
+                    alt=""></button>
+        </div>
     </div>
 </body>
 
 </html>
 <script>
-window.onload = obterDadosGrafico();
-verificar_autenticacao();
 
-function obterDadosGrafico() {
 
-        fetch(`/medidas/ultimosIntrumentos/`, { cache: 'no-store' }).then(function (response) {
+    // Chart1 / quantidade de cada instrumento
+    window.onload = obterDadosGraficoInstrumentos();
+
+    // verificar_autenticacao();
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+    function obterDadosGraficoInstrumentos() {
+
+        fetch(`/medidas/ultimosInstrumentos/`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
-                    plotarGrafico(resposta);
+                    plotarGraficoInstrumentos(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -110,20 +121,12 @@ function obterDadosGrafico() {
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta) {
+    function plotarGraficoInstrumentos(resposta) {
         console.log('iniciando plotagem do gráfico...');
 
         var dados = {
             labels: [],
             datasets: [
-                {
-                    yAxisID: 'y-violao',
-                    label: 'Violão',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#fff',
-                    fill: true,
-                    data: []
-                },
                 {
                     yAxisID: 'y-violino',
                     label: 'Violino',
@@ -131,8 +134,18 @@ function obterDadosGrafico() {
                     backgroundColor: '#32b9cd8f',
                     fill: true,
                     data: []
+                },
+                {
+                    yAxisID: 'y-violao',
+                    label: 'Violão',
+                    borderColor: '#32B9CD',
+                    backgroundColor: '#fff',
+                    fill: true,
+                    data: []
                 }
+
             ]
+
         };
 
         for (i = 0; i < resposta.length; i++) {
@@ -140,10 +153,10 @@ function obterDadosGrafico() {
             dados.datasets[i].data.push(registro.contagemIns);
             // dados.datasets[i].data.push(registro.contagemIns);
         }
-        dados.labels.push(registro.nomeIntrumento);
+        // dados.labels[0]=("registro.nomeIntrumento");
 
 
-        
+
 
         console.log(JSON.stringify(dados));
 
@@ -190,63 +203,88 @@ function obterDadosGrafico() {
         });
     }
 
-  //    chart1
-  //   const labels = [
-  //     'Violão',
-  //     'Piano',
-  //     'Violino',
-  //     'Flauta',
-  //     'Alaúde',
-  //   ];
-  
-  //   const data = {
-  //     labels: labels,
-  //     datasets: [{
-  //       label: 'My First dataset',
-  //       backgroundColor: 'rgb(255, 99, 132)',
-  //       borderColor: 'rgb(255, 99, 132)',
-  //       data: [0, 10, 5, 2, 20, 30],
-  //     }]
-  //   };
-  
-  //   const config = {
-  //     type: 'bar',
-  //     data: data,
-  //     options: {}
-  //   };
-  //   const myChart = new Chart(
-  //   document.getElementById('myChart'),
-  //   config
-  // );
 
-//   Chart2
 
-  const labels2 = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ];
-  
-    const data2 = {
-      labels: labels2,
-      datasets: [{
-        label: 'Quantidade de pessoas',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
-      }]
-    };
-  
-    const config2 = {
-      type: 'line',
-      data: data2,
-      options: {}
-    };
-    const myChart2 = new Chart(
-    document.getElementById('myChart2'),
-    config2
-  );
-  </script>
+
+    //   Chart2 quantidade de usuários
+
+    window.onload = obterDadosGraficoUsuarios();
+    function obterDadosGraficoUsuarios() {
+
+        fetch(`/medidas/quantidadeUsuarios/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    plotarGraficoUsuarios(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGraficoUsuarios(resposta) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var dadosUsuarios = {
+            labels: [],
+            datasets: [
+                {
+                    yAxisID: 'y-usuarios',
+                    label: 'Usuarios',
+                    borderColor: '#FFF',
+                    backgroundColor: '#32b9cd8f',
+                    fill: true,
+                    data: []
+                }
+
+            ]
+
+        };
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dadosUsuarios.datasets[i].data.push(registro.qtdUsuarios);
+            // dados.datasets[i].data.push(registro.contagemIns);
+        }
+        dadosUsuarios.labels[0]=("Usuarios");
+
+        console.log(JSON.stringify(dadosUsuarios));
+
+        var ctx = myChart2.getContext('2d');
+        window.graficoBar = Chart.Bar(ctx, {
+            data: dadosUsuarios,
+            options: {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: false,
+                    text: 'Dados capturados'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        id: 'y-usuarios',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    }
+                      ],
+                }
+            }
+        });
+    }
+</script>
