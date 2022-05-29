@@ -6,12 +6,10 @@ create table instrumento (
 	idInstrumento int primary key auto_increment,
     nomeInstrumento varchar(30)
 );
- insert into instrumento values(
- null,"violão"
- );
+ insert into instrumento values
+ (null,"violão"),
+ (null,"violino");
  
-  insert into instrumento values
-  (null,"violino");
 create table usuario(
 	idUsuario int primary key auto_increment,
     nomeUsuario varchar(70),
@@ -20,11 +18,20 @@ create table usuario(
     fkInstrumento int ,
     foreign key(fkinstrumento) references instrumento(idInstrumento)
 );
-
 insert into usuario values
 (null,"Matheus","matheus@gmail.com",12345,2),
 (null,"julio","julio@gmail.com",12345,1)
 ;
---  select * from usuario;
---  select nomeInstrumento,count(fkInstrumento) from instrumento join usuario on instrumento.idinstrumento = usuario.fkinstrumento group by nomeInstrumento;
--- select count(idUsuario) from usuario;
+
+create table mensagem(
+	idMensagem int primary key auto_increment,
+    conteudoMensagem varchar(500),
+    fkUsuario int,
+    foreign key (fkUsuario) references usuario(idUsuario)
+);
+
+select * from mensagem;
+ select * from usuario;
+
+ select nomeInstrumento,count(fkInstrumento) from instrumento join usuario on instrumento.idinstrumento = usuario.fkinstrumento group by nomeInstrumento;
+ select count(idUsuario) from usuario;
