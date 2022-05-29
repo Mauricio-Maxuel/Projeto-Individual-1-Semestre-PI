@@ -134,7 +134,7 @@ body{
 .btnGoCommunity{
     border-radius: 30px;
     height: 48%;
-    width: 45%;
+    width: 35%;
     border: none;
     cursor: pointer;
     transition: 500ms;

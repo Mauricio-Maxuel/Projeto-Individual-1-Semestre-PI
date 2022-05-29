@@ -1,12 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../assets/imgs/YMusicFontColor.png" type="image/x-icon">
+    <!-- links -->
+    <!-- link do chartJS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+    <!-- link dos scripts js -->
+    <script src="../js/funcoes.js"></script>
+    <!-- link fontAwesome -->
+    <script src="https://kit.fontawesome.com/0de1e0c120.js" crossorigin="anonymous"></script>
+    <!-- link css sideBar -->
+    <link rel="stylesheet" href="../styles/styleSideBar.css">
+    <!-- link css -->
+    <link rel="stylesheet" href="../styles/styleForum.css">
+
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>YMusic | Fórum</title>
 </head>
-<body>
-    
+
+<body onload="validarSessao(),atualizarFeed()">
+<div class="divContentAll">
+    <div class="sideBar">
+        <div class="userSide">
+            <h3 id="b_usuario">Mauricio</h3>
+        </div>
+        <div class="contentSidebar">
+            <div class="itemSideBar itemSideBarActive">
+                <i class="fa fa-solid fa-comment-dots"></i>
+                <a href="#">Chat</a>
+            </div>
+            <div class="itemSideBar">
+                <i class="fa fa-solid fa-guitar"></i>
+                <a href="">Covers</a>
+            </div>
+        </div>
+        <div class="divBack">
+            <div class="divreturn"><a href="dashboard.html"><i class="fa fa-solid fa-arrow-left"></i></a></div>
+            <div class="divConfig"><a href=""><i class="fa fa-solid fa-gear"></i></a></div>
+        </div>
+    </div>
+
+    <div class="divChat">
+        <div class="divFeed" id="feed_container">
+            <div id="scroll" class="divMessage">
+                <div>
+                <!-- <h3>Name</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam saepe, labore asperiores, error
+                    debitis nam tenetur deserunt et aperiam perferendis autem deleniti a inventore veniam reiciendis
+                    animi ducimus porro dicta?</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="divInput">
+            <form id="form_postagem" method="post" onsubmit="return publicar()">
+                <input  maxlength="500" id="inputMessage" placeholder="Digite uma mensagem:" type="text">
+                <button><i class="fa fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>
+
+<script>
+    
+    var objDiv = document.getElementById("scroll");
+    objDiv.scrollTop = objDiv.scrollHeight;
+     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+
+    function publicar() {
+
+        // if(inputMessage == ""){
+        //     alert("digite akguma mensagem")
+        // }
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        var corpo = {
+            message: form_postagem.inputMessage.value
+        }
+
+        fetch(`/message/publicar/${idUsuario}`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(corpo)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.location = "/dashboard/forum.html";
+                limparFormulario();
+                // finalizarAguardar();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+
+    function atualizarFeed() {
+       
+        //aguardar();
+        fetch("/message/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        // var spanID = document.createElement("span")
+                        // var spanTitulo = document.createElement("span");
+                        var h3Nome = document.createElement("h3");
+                        var PMensagem = document.createElement("p");
+                        
+                        h3Nome.innerHTML = publicacao.nomeUsuario
+                        PMensagem.innerHTML =  publicacao.conteudoMensagem 
+
+                        divPublicacao.className = "divMessage";
+
+
+                        divPublicacao.appendChild(h3Nome);
+                        divPublicacao.appendChild(PMensagem);
+                        feed.appendChild(divPublicacao);
+                    }
+
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
+    }
+    
+</script>
