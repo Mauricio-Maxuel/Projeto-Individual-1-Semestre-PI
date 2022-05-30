@@ -30,6 +30,13 @@ create table mensagem(
     foreign key (fkUsuario) references usuario(idUsuario)
 );
 
+create table cover(
+	idVideo int primary key auto_increment,
+    linkVideo varchar(20),
+    fkusuario int,
+    foreign key (fkUsuario) references usuario(idUsuario)
+);
+
 select * from mensagem;
  select * from usuario;
 

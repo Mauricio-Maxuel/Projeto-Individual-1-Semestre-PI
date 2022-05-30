@@ -17,10 +17,12 @@ body::-webkit-scrollbar-thumb {
   }
 
   .divContentAll{
+    justify-content: center;
       align-items: center;
       display: flex;
-      width: 100%;
+      width: 90%;
       height: 100vh;
+      margin-left: 10%;
       /* background-color: red; */
   }
 

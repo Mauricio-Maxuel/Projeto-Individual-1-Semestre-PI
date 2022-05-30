@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="../assets/imgs/YMusicFontColor.png" type="image/x-icon">
-        <!-- links -->
-        <!-- link do chartJS -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-        <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
-    
-        <!-- link dos scripts js -->
-        <script src="../js/funcoes.js"></script>
-        <!-- link fontAwesome -->
-        <script src="https://kit.fontawesome.com/0de1e0c120.js" crossorigin="anonymous"></script>
-        <!-- link css sideBar -->
-        <link rel="stylesheet" href="../styles/styleSideBar.css">
-        <!-- link css -->
-        <link rel="stylesheet" href="../styles/styleForum.css">
-        <link rel="stylesheet" href="../styles/styleCover.css">
-    
-        <!-- link font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
-        <title>YMusic | Covers</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/imgs/YMusicFontColor.png" type="image/x-icon">
+    <!-- links -->
+    <!-- link do chartJS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+
+    <!-- link dos scripts js -->
+    <script src="../js/funcoes.js"></script>
+    <!-- link fontAwesome -->
+    <script src="https://kit.fontawesome.com/0de1e0c120.js" crossorigin="anonymous"></script>
+    <!-- link css sideBar -->
+    <link rel="stylesheet" href="../styles/styleSideBar.css">
+    <!-- link css -->
+    <link rel="stylesheet" href="../styles/styleForum.css">
+    <link rel="stylesheet" href="../styles/styleCover.css">
+
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>YMusic | Covers</title>
+</head>
+<!-- <body onload="validarSessao()"> -->
+
 <body>
     <div class="divContentAll">
         <div class="sideBar">
@@ -37,11 +40,11 @@
             <div class="contentSidebar">
                 <div class="itemSideBar ">
                     <i class="fa fa-solid fa-comment-dots"></i>
-                    <a href="#">Chat</a>
+                    <a href="forum.html">Chat</a>
                 </div>
                 <div class="itemSideBar itemSideBarActive">
                     <i class="fa fa-solid fa-guitar"></i>
-                    <a href="">Covers</a>
+                    <a href="#">Covers</a>
                 </div>
             </div>
             <div class="divBack">
@@ -50,42 +53,67 @@
             </div>
         </div>
 
-        <div id="contentCover" class="divContentCovers">
-             <div class="divItemCover">
-                <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/2bSbaeEnMDw?controls=0" ></iframe>
-             </div>
-             <div class="divItemCover">
-                <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/CVHnsH5m_Tk?controls=0" ></iframe>
-             </div>
-             <div class="divItemCover">
-                <iframe  class="iframe" src="https://www.youtube-nocookie.com/embed/EM05BH2_rMA?controls=0" ></iframe>
-             </div>
-        </div>
-        <input type="text" id="teste">
-    <button onclick="pegarLink()">
+        <div class="divContentAllCover">
+            <div id="contentCover" class="divContentCovers">
+                
+                <div class="divCoverUserVideo">
+                    <h2>Mauricio</h2>
+                    <div class="divItemCover">
+                        <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/0XIqH9DfpIc"></iframe>
+                    </div>
+                </div>
+                <div class="divCoverUserVideo">
+                    <h2>Mauricio</h2>
+                    <div class="divItemCover">
+                        <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/AXrz6bG5jgI"></iframe>
+                    </div>
+                </div>
+                <div class="divCoverUserVideo">
+                    <h2>Mauricio</h2>
+                    <div class="divItemCover">
+                        <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/8F_X-hIhTQs"></iframe>
+                    </div>
+                </div>
+                <!-- <div class="divItemCover">
+                    <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/CVHnsH5m_Tk"></iframe>
+                </div> -->
+            </div>
 
-    </button>
+            <div class="divsubmitCover">
+                <input maxlength="50" placeholder="Envie seu Video" class="myLink" type="text" id="inputGetLink">
+                <button onclick="pegarLink()">
+                    Enviar
+                </button>
+            </div>
+        </div>
     </div>
-    
+
 </body>
+
 </html>
 
 <script>
-    function pegarLink(){
-        var link = teste.value
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    function pegarLink() {
+        var link = inputGetLink.value
         var linkTratado = link.slice(-11)
         console.log(linkTratado)
 
         var divCovers = document.getElementById("contentCover")
+        var itemCoverUserVideo = document.createElement("div");
         var itemCover = document.createElement("div");
+        var nameOfUser = document.createElement("h2")
         var frame = document.createElement("iframe")
 
-        frame.setAttribute("src",`https://www.youtube-nocookie.com/embed/${linkTratado}?controls=0`)
+        frame.setAttribute("src", `https://www.youtube-nocookie.com/embed/${linkTratado}`)
         frame.className = "iframe"
-        itemCover.className= "divItemCover"
+        itemCover.className = "divItemCover"
+        itemCoverUserVideo.className = "divCoverUserVideo"
 
+        itemCoverUserVideo.appendChild(nameOfUser)
+        itemCoverUserVideo.appendChild(itemCover)
         itemCover.appendChild(frame)
-        divCovers.appendChild(itemCover)
+        divCovers.appendChild(itemCoverUserVideo)
 
 
     }
