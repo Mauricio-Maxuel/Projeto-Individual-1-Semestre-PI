@@ -94,3 +94,33 @@
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: rgb(128, 128, 128);
 }
+
+.FormCover{
+  display: flex;
+}
+.FormCover input{
+  padding: 2%;
+}
+.buttonCover{
+  background-color: transparent;
+  border-radius:300px;
+  padding: 4% 4.5%;
+  color: rgb(20, 20, 20);
+  border: 2px solid rgb(20, 20, 20);
+  font-size: 1.1rem;
+  transition: 300ms;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonCover:hover{
+  /* transform: scale(106%); */
+  font-size: 1.1rem;
+  background-color: rgb(20, 20, 20);
+  border-radius:300px;
+  color: rgb(48, 46, 46);
+  padding: 4% 4.5%;
+  border: 2px solid rgb(20, 20, 20);
+}

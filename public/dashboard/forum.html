@@ -31,7 +31,7 @@
 
 <body onload="validarSessao(),atualizarFeed()">
 
-<!-- <body> -->
+    <!-- <body> -->
 
     <div class="divContentAll">
         <div class="sideBar">
@@ -87,13 +87,17 @@
 
     function publicar() {
 
-        // if(inputMessage == ""){
-        //     alert("digite akguma mensagem")
-        // }
+
+        var mensagem = inputMessage.value
+        if (mensagem == "") {
+            alert("digite alguma mensagem");
+            return false
+        }
+
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
-            message: form_postagem.inputMessage.value
+            message: mensagem
         }
 
         fetch(`/message/publicar/${idUsuario}`, {

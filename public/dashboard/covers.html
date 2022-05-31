@@ -81,13 +81,20 @@
             </div>
 
             <div class="divsubmitCover">
-                <form id="form_postagem" method="post" onsubmit="return publicar()">
-                    <input maxlength="50" placeholder="Envie seu Video" class="myLink" type="text" id="inputGetLink">
+                <form class="FormCover" id="form_postagem" method="post" onsubmit="return publicar()">
+                    <input maxlength="50" autocomplete="off" placeholder="Link do Video" class="myLink" type="text"
+                        id="inputGetLink">
 
-                    <button>
-                        Enviar
+                    <button class="buttonCover">
+                        <i class="fa fa-solid fa-plus"></i>
                     </button>
                 </form>
+                <!-- <input maxlength="50" autocomplete="off" placeholder="teste" class="myLink" type="text"
+                        id="inputTeste">
+
+                    <button  onclick="teste()">
+                        enviar link
+                    </button> -->
             </div>
         </div>
     </div>
@@ -99,16 +106,57 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
+    function teste(){
+        var teste = inputTeste.value
+
+        if(teste == ""){
+            alert("texto vazio")
+        }else if(teste.length>43){
+            alert("link inválido")
+        }else if(teste.length<31){
+            alert("link inválido")
+        }else{
+            var j = (teste.indexOf("v="))+2
+            var limite = j+11
+            var lista = []
+            for(;j<limite;j++){
+                lista.push(teste[j])
+            }
+          lista = lista.join("")
+            console.log(lista)
+        }   
+
+        // console.log(teste)
+    }
+
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
 
     function publicar() {
-        var link = inputGetLink.value
-        var linkTratado = link.slice(-11)
-        // if(inputMessage == ""){
-        //     alert("digite akguma mensagem")
-        // }
+        var linkTratado = inputGetLink.value
+        // var linkTratado = link.slice(-11)
+    
+
+        if(linkTratado == ""){
+            alert("Insira um link do youtube")
+            return false
+        }else if(linkTratado.length>50){
+            alert("link muito grande")
+        }else if(linkTratado.length<31){
+            alert("link inválido")
+            return false
+        }else{
+            var intervalBeggin = (linkTratado.indexOf("v="))+2
+            var intervalEnd = intervalBeggin+11
+            var arrayOfIdVideo = []
+            for(;intervalBeggin<intervalEnd;intervalBeggin++){
+                arrayOfIdVideo.push(linkTratado[intervalBeggin])
+            }
+          linkTratado = arrayOfIdVideo.join("")
+            // console.log(lista)
+        }
+
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
@@ -126,7 +174,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                // window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.alert("Cover Cadatrado com sucesso pelo usuario de ID: " + idUsuario + "!");
                 window.location = "/dashboard/covers.html";
                 limparFormulario();
                 // finalizarAguardar();
@@ -164,7 +212,7 @@
                     divCovers.innerHTML = "";
                     for (let i = 0; i < resposta.length; i++) {
                         var videos = resposta[i];
-                        
+
                         var itemCoverUserVideo = document.createElement("div");
                         var itemCover = document.createElement("div");
                         var nameOfUser = document.createElement("h2")
