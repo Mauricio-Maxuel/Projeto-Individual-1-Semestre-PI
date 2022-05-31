@@ -29,56 +29,57 @@
     <title>YMusic | Fórum</title>
 </head>
 
-<!-- <body onload="validarSessao(),atualizarFeed()"> -->
-    <body>
-        
-<div class="divContentAll">
-    <div class="sideBar">
-        <div class="userSide">
-            <h3 id="b_usuario">Mauricio</h3>
-        </div>
-        <div class="contentSidebar">
-            <div class="itemSideBar itemSideBarActive">
-                <i class="fa fa-solid fa-comment-dots"></i>
-                <a href="#">Chat</a>
-            </div>
-            <div class="itemSideBar">
-                <i class="fa fa-solid fa-guitar"></i>
-                <a href="covers.html">Covers</a>
-            </div>
-        </div>
-        <div class="divBack">
-            <div class="divreturn"><a href="dashboard.html"><i class="fa fa-solid fa-arrow-left"></i></a></div>
-            <div class="divConfig"><a href=""><i class="fa fa-solid fa-gear"></i></a></div>
-        </div>
-    </div>
+<body onload="validarSessao(),atualizarFeed()">
 
-    <div class="divChat">
-        <div class="divFeed" id="feed_container">
-            <div id="scroll" class="divMessage">
-                <div>
-                <!-- <h3>Name</h3>
+<!-- <body> -->
+
+    <div class="divContentAll">
+        <div class="sideBar">
+            <div class="userSide">
+                <h3 id="b_usuario">Mauricio</h3>
+            </div>
+            <div class="contentSidebar">
+                <div class="itemSideBar itemSideBarActive">
+                    <i class="fa fa-solid fa-comment-dots"></i>
+                    <a href="#">Chat</a>
+                </div>
+                <div class="itemSideBar">
+                    <i class="fa fa-solid fa-guitar"></i>
+                    <a href="covers.html">Covers</a>
+                </div>
+            </div>
+            <div class="divBack">
+                <div class="divreturn"><a href="dashboard.html"><i class="fa fa-solid fa-arrow-left"></i></a></div>
+                <div class="divConfig"><a href=""><i class="fa fa-solid fa-gear"></i></a></div>
+            </div>
+        </div>
+
+        <div class="divChat">
+            <div class="divFeed" id="feed_container">
+                <div id="scroll" class="divMessage">
+                    <div>
+                        <!-- <h3>Name</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam saepe, labore asperiores, error
                     debitis nam tenetur deserunt et aperiam perferendis autem deleniti a inventore veniam reiciendis
                     animi ducimus porro dicta?</p> -->
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="divInput">
-            <form id="form_postagem" method="post" onsubmit="return publicar()">
-                <input  maxlength="500" id="inputMessage" placeholder="Digite uma mensagem:" type="text">
-                <button><i class="fa fa-solid fa-paper-plane"></i></button>
-            </form>
+            <div class="divInput">
+                <form id="form_postagem" method="post" onsubmit="return publicar()">
+                    <input maxlength="500" id="inputMessage" placeholder="Digite uma mensagem:" type="text">
+                    <button><i class="fa fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>
 
 <script>
-    
-     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
@@ -125,7 +126,7 @@
 
 
     function atualizarFeed() {
-       
+
         //aguardar();
         fetch("/message/listar").then(function (resposta) {
             if (resposta.ok) {
@@ -151,9 +152,9 @@
                         // var spanTitulo = document.createElement("span");
                         var h3Nome = document.createElement("h3");
                         var PMensagem = document.createElement("p");
-                        
+
                         h3Nome.innerHTML = publicacao.nomeUsuario
-                        PMensagem.innerHTML =  publicacao.conteudoMensagem 
+                        PMensagem.innerHTML = publicacao.conteudoMensagem
 
                         divPublicacao.className = "divMessage";
 
@@ -173,5 +174,5 @@
             // finalizarAguardar();
         });
     }
-    
+
 </script>

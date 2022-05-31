@@ -29,9 +29,10 @@
         rel="stylesheet">
     <title>YMusic | Covers</title>
 </head>
-<!-- <body onload="validarSessao()"> -->
 
-<body>
+<body onload="validarSessao(),atualizarFeed()">
+
+    <!-- <body> -->
     <div class="divContentAll">
         <div class="sideBar">
             <div class="userSide">
@@ -55,8 +56,8 @@
 
         <div class="divContentAllCover">
             <div id="contentCover" class="divContentCovers">
-                
-                <div class="divCoverUserVideo">
+
+                <!-- <div class="divCoverUserVideo">
                     <h2>Mauricio</h2>
                     <div class="divItemCover">
                         <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/0XIqH9DfpIc"></iframe>
@@ -73,17 +74,20 @@
                     <div class="divItemCover">
                         <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/8F_X-hIhTQs"></iframe>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="divItemCover">
                     <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/CVHnsH5m_Tk"></iframe>
                 </div> -->
             </div>
 
             <div class="divsubmitCover">
-                <input maxlength="50" placeholder="Envie seu Video" class="myLink" type="text" id="inputGetLink">
-                <button onclick="pegarLink()">
-                    Enviar
-                </button>
+                <form id="form_postagem" method="post" onsubmit="return publicar()">
+                    <input maxlength="50" placeholder="Envie seu Video" class="myLink" type="text" id="inputGetLink">
+
+                    <button>
+                        Enviar
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -94,28 +98,101 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    function pegarLink() {
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+
+    function publicar() {
         var link = inputGetLink.value
         var linkTratado = link.slice(-11)
-        console.log(linkTratado)
+        // if(inputMessage == ""){
+        //     alert("digite akguma mensagem")
+        // }
+        var idUsuario = sessionStorage.ID_USUARIO;
 
-        var divCovers = document.getElementById("contentCover")
-        var itemCoverUserVideo = document.createElement("div");
-        var itemCover = document.createElement("div");
-        var nameOfUser = document.createElement("h2")
-        var frame = document.createElement("iframe")
+        var corpo = {
+            linkMyVideo: linkTratado
+        }
 
-        frame.setAttribute("src", `https://www.youtube-nocookie.com/embed/${linkTratado}`)
-        frame.className = "iframe"
-        itemCover.className = "divItemCover"
-        itemCoverUserVideo.className = "divCoverUserVideo"
+        fetch(`/cover/publicar/${idUsuario}`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(corpo)
+        }).then(function (resposta) {
 
-        itemCoverUserVideo.appendChild(nameOfUser)
-        itemCoverUserVideo.appendChild(itemCover)
-        itemCover.appendChild(frame)
-        divCovers.appendChild(itemCoverUserVideo)
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.location = "/dashboard/covers.html";
+                limparFormulario();
+                // finalizarAguardar();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
 
 
+    function atualizarFeed() {
+        //aguardar();
+        fetch("/cover/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var divCovers = document.getElementById("contentCover");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    divCovers.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    // var feed = document.getElementById("feed_container");
+                    var divCovers = document.getElementById("contentCover")
+                    divCovers.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var videos = resposta[i];
+                        
+                        var itemCoverUserVideo = document.createElement("div");
+                        var itemCover = document.createElement("div");
+                        var nameOfUser = document.createElement("h2")
+                        var frame = document.createElement("iframe")
+
+                        nameOfUser.innerHTML = videos.nomeUsuario
+                        frame.setAttribute("src", `https://www.youtube-nocookie.com/embed/${videos.linkVideo}`)
+
+                        frame.className = "iframe"
+                        itemCover.className = "divItemCover"
+                        itemCoverUserVideo.className = "divCoverUserVideo"
+
+                        itemCoverUserVideo.appendChild(nameOfUser)
+                        itemCoverUserVideo.appendChild(itemCover)
+                        itemCover.appendChild(frame)
+                        divCovers.appendChild(itemCoverUserVideo)
+                        console.log(videos.linkMyVideo)
+                    }
+
+                    // finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            // finalizarAguardar();
+        });
     }
 
 </script>
