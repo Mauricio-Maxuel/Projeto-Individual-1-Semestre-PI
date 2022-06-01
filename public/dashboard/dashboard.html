@@ -27,66 +27,66 @@
 </head>
 
 <!-- <body onload="validarSessao()"> -->
-    <div class="divMain">
-        <div class="divContentMain">
-            <div class="divUserDash">
-                <div class="itensUser">
-                    <img class="userIMGDash" src="../assets/imgsDash/userDash.png" alt="">
-                    <h3 class="nameUser" id="b_usuario"></h3>
-                </div>
-                <img onclick="limparSessao()" class="leaveDoor" src="../assets/imgsDash/open-exit-door.png" alt="">
+<div class="divMain">
+    <div class="divContentMain">
+        <div class="divUserDash">
+            <div class="itensUser">
+                <img class="userIMGDash" src="../assets/imgsDash/userDash.png" alt="">
+                <h3 class="nameUser" id="b_usuario"></h3>
             </div>
+            <img onclick="limparSessao()" class="leaveDoor" src="../assets/imgsDash/open-exit-door.png" alt="">
+        </div>
 
-            <div class="divBannerDash">
-                <div class="divImgBanner">
-                    <h2>Experimente Nosso Simulador</h2>
-                    <p>Um Simulador para você experimentar como é ser um violonista.</p>
-                    <button class="btnBanner"><img src="../assets/imgsDash/right-arrow.png" alt=""></button>
-                </div>
-                <div class="divGoCommunity">
-                    <div class="divContentGoCommunity">
-                        <h2>Participe da nossa comunidade</h2>
-                        <button class="btnBanner btnGoCommunity"><a href="forum.html"><img src="../assets/imgsDash/right-arrow.png"
-                                alt=""></a></button>
-                    </div>
-                </div>
+        <div class="divBannerDash">
+            <div class="divImgBanner">
+                <h2>Experimente Nosso Simulador</h2>
+                <p>Um Simulador para você experimentar como é ser um violonista.</p>
+                <button class="btnBanner"><img src="../assets/imgsDash/right-arrow.png" alt=""></button>
             </div>
-            <div class="divDashBoard instrumentsPreferred">
-                <h2>Instrumentos mais <span>Escolhidos<span></h2>
-                <div class="divMyDash">
-                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-                </div>
-            </div>
-            <div class="divDashBoard usersRegistered">
-                <h2>Quantidade de pessoas <span>Cadastradas<span></h2>
-                <div class="divMyDash">
-                    <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+            <div class="divGoCommunity">
+                <div class="divContentGoCommunity">
+                    <h2>Participe da nossa comunidade</h2>
+                    <button class="btnBanner btnGoCommunity"><a href="forum.html"><img
+                                src="../assets/imgsDash/right-arrow.png" alt=""></a></button>
                 </div>
             </div>
         </div>
-
-
-    </div>
-    <div class="divRight">
-        <div class="ItensCardRight">
-            <h3>Fundamentos da teoria musical</h3>
-            <p>Aprenda os fundamentos para entender de fato o mundo da musica</p>
-            <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
-                    alt=""></button>
+        <div class="divDashBoard instrumentsPreferred">
+            <h2>Instrumentos mais <span>Escolhidos<span></h2>
+            <div class="divMyDash">
+                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+            </div>
         </div>
-        <div class="ItensCardRight">
-            <h3>Exercícios para melhor no violão</h3>
-            <p>Exercícios para melhora da técnica e confiança no violão.</p>
-            <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
-                    alt=""></button>
-        </div>
-        <div class="ItensCardRight">
-            <h3>Aprenda a trocar as cordas do seu violão</h3>
-            <p>não passe mais aperto e troque você mesmo.</p>
-            <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
-                    alt=""></button>
+        <div class="divDashBoard usersRegistered">
+            <h2>Quantidade de pessoas <span>Cadastradas<span></h2>
+            <div class="divMyDash">
+                <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+            </div>
         </div>
     </div>
+
+
+</div>
+<div class="divRight">
+    <div class="ItensCardRight">
+        <h3>Fundamentos da teoria musical</h3>
+        <p>Aprenda os fundamentos para entender de fato o mundo da musica</p>
+        <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
+                alt=""></button>
+    </div>
+    <div class="ItensCardRight">
+        <h3>Exercícios para melhor no violão</h3>
+        <p>Exercícios para melhora da técnica e confiança no violão.</p>
+        <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
+                alt=""></button>
+    </div>
+    <div class="ItensCardRight">
+        <h3>Aprenda a trocar as cordas do seu violão</h3>
+        <p>não passe mais aperto e troque você mesmo.</p>
+        <button class="btnBanner btnGoCommunity btnCourses"><img src="../assets/imgsDash/right-arrow.png"
+                alt=""></button>
+    </div>
+</div>
 </body>
 
 </html>
@@ -106,7 +106,7 @@
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                    resposta.reverse();
+                    // resposta.reverse();
                     plotarGraficoInstrumentos(resposta);
                 });
             } else {
@@ -128,21 +128,71 @@
             labels: [],
             datasets: [
                 {
-                    yAxisID: 'y-violino',
-                    label: 'Violino',
-                    borderColor: '#FFF',
-                    backgroundColor: '#32b9cd8f',
+                    yAxisID: 'y-violao',
+                    label: 'Violão',
+                    backgroundColor: '#F06854',
                     fill: true,
                     data: []
                 },
                 {
-                    yAxisID: 'y-violao',
-                    label: 'Violão',
-                    borderColor: '#32B9CD',
-                    backgroundColor: '#fff',
+                    yAxisID: 'y-violino',
+                    label: 'Violino',
+                    backgroundColor: '#82EBD5',
                     fill: true,
                     data: []
-                }
+                },
+                {
+                    yAxisID: 'y-piano',
+                    label: 'Piano',
+                    backgroundColor: '#2122F0',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-bateria',
+                    label: 'Bateria',
+                    backgroundColor: '#4914D9',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-guitarra',
+                    label: 'Guitarra',
+                    backgroundColor: '#9216F8',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-flauta',
+                    label: 'Flauta',
+                    backgroundColor: '#5AF057',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-baixo',
+                    label: 'Baixo',
+                    backgroundColor: '#C7F84D',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-banjo',
+                    label: 'Banjo',
+                    backgroundColor: '#F84F1E',
+                    fill: true,
+                    data: []
+                },
+                {
+                    yAxisID: 'y-saxofone',
+                    label: 'Saxofone',
+                    backgroundColor: '#F0902A',
+                    fill: true,
+                    data: []
+                },
+
+
+
 
             ]
 
@@ -150,10 +200,37 @@
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            dados.datasets[i].data.push(registro.contagemIns);
+            if(registro.nomeInstrumento == "Violão"){
+                dados.datasets[0].data.push(registro.contagemIns);
+            }else if(registro.nomeInstrumento == "Violino"){
+                dados.datasets[1].data.push(registro.contagemIns);
+            }
+            else if(registro.nomeInstrumento == "Piano"){
+                dados.datasets[2].data.push(registro.contagemIns);
+            }
+            else if(registro.nomeInstrumento == "Bateria"){
+                dados.datasets[3].data.push(registro.contagemIns);
+            }
+            else if(registro.nomeInstrumento == "Guitarra"){
+                dados.datasets[4].data.push(registro.contagemIns);
+            }
+            else if(registro.nomeInstrumento == "Flauta"){
+                dados.datasets[5].data.push(registro.contagemIns);
+            }
+            else if(registro.nomeInstrumento == "Baixo"){
+                dados.datasets[6].data.push(registro.contagemIns);
+            }
+            else if(registro.nomeInstrumento == "Banjo"){
+                dados.datasets[7].data.push(registro.contagemIns);
+            }
+            else if(registro.nomeInstrumento == "Saxofone"){
+                dados.datasets[8].data.push(registro.contagemIns);
+            }
+            
+
             // dados.datasets[i].data.push(registro.contagemIns);
         }
-        // dados.labels[0]=("registro.nomeIntrumento");
+        dados.labels[0]=("Instrumentos Mais Escolhidos");
 
 
 
@@ -183,11 +260,89 @@
                             max: 10,
                             min: 0
                         }
-                    }, {
+                    },
+                    {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        id: 'y-violino',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    },
+                    {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        id: 'y-piano',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    },
+                    {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        id: 'y-bateria',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    },
+                    {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        id: 'y-guitarra',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    },
+                    {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        id: 'y-flauta',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    },
+                    {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        id: 'y-baixo',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    },
+                    {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        id: 'y-banjo',
+                        ticks: {
+                            beginAtZero: true,
+                            max: 10,
+                            min: 0
+                        }
+                    },
+                    {
                         type: 'linear',
                         display: false,
                         position: 'right',
-                        id: 'y-violino',
+                        id: 'y-saxofone',
                         ticks: {
                             beginAtZero: true,
                             max: 10,
@@ -202,8 +357,6 @@
             }
         });
     }
-
-
 
 
     //   Chart2 quantidade de usuários
@@ -254,7 +407,7 @@
             dadosUsuarios.datasets[i].data.push(registro.qtdUsuarios);
             // dados.datasets[i].data.push(registro.contagemIns);
         }
-        dadosUsuarios.labels[0]=("Usuarios");
+        dadosUsuarios.labels[0] = ("Usuarios");
 
         console.log(JSON.stringify(dadosUsuarios));
 
@@ -282,7 +435,7 @@
                             min: 0
                         }
                     }
-                      ],
+                    ],
                 }
             }
         });

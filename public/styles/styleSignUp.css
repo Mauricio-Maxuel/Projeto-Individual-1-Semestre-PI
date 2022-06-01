@@ -23,25 +23,28 @@ body::-webkit-scrollbar-thumb {
     height: 100vh;
 }
 
-.iconBack{
+.iconBack {
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.iconBack a img{
+
+.iconBack a img {
     margin-left: -10%;
     width: 10%;
     height: 10%;
 }
-.textSelectYourInstrument{
-    margin:0;
+
+.textSelectYourInstrument {
+    margin: 0;
     margin-bottom: 1%;
     margin-top: 2%;
     font-size: 1.8rem;
     color: white;
     font-weight: 300;
 }
+
 .divSelectYourInstrument {
     display: flex;
     flex-direction: column;
@@ -49,57 +52,62 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     width: 100%;
     /* Cor a definir */
-    background-color: #807B4D;
+    background-color: rgb(44, 43, 43);
 }
-.contentYourInstrument{
-    flex-wrap: wrap;
+
+.contentYourInstrument {
+    flex-wrap:wrap;
     display: flex;
-    width:98%;
-    height: 49vh;
+    width: 70%;
+    height: 65vh;
     filter: drop-shadow(10px 5px 4px #0e0e0f);
     flex-direction: column;
     border-radius: 3px;
+    padding: 4%;
     overflow-x: scroll;
+    /* background-color: red; */
 }
 
 .contentYourInstrument::-webkit-scrollbar {
-    width: 12px;       
-  }
-  
+    width: 12px;
+}
 
-  .contentYourInstrument::-webkit-scrollbar-thumb {
+
+.contentYourInstrument::-webkit-scrollbar-thumb {
     background-color: #eeeeee52;
-    border-radius: 20px;     
-  }
-.cardYourInstruments{
-    background-color: rgba(33, 29, 2, 0.229);
+    border-radius: 20px;
+}
+
+.cardYourInstruments {
+    background-color: rgba(65, 65, 63, 0.229);
     display: flex;
     align-items: baseline;
-    width: 20%;
-    height: 39%;
+    width: 25%;
+    height: 27%;
     padding: 1.5%;
     /* background-color: blue; */
-    margin:0.5%;
-    border: 1px solid white;
+    margin: 0.5%;
+    border: 1px solid transparent;
     border-radius: 5px;
     cursor: pointer;
-    transition:400ms;
+    transition: 400ms;
 }
 
-.cardYourInstruments:hover{
-    border: 1px solid #33311F;
-   transform: translate(0%,-1%);
+.cardYourInstruments:hover {
+    background-color: #232323;
+    border: 1px solid #5a5a5a;
+    transform: translate(0%, -1%);
 }
 
 
-.radioYourInstruments{
+.radioYourInstruments {
     position: relative;
     margin: 0;
     left: 90%;
     top: -2%;
 }
 
-.contentCardYourInstruments{
+.contentCardYourInstruments {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,26 +117,30 @@ body::-webkit-scrollbar-thumb {
     margin-right: 10%;
     /* background-color: green; */
 }
-.nameOfInstruments{
+
+.nameOfInstruments {
     display: flex;
     justify-content: center;
     width: 70%;
     height: 20%;
 }
-.nameOfInstruments h3{
+
+.nameOfInstruments h3 {
     font-size: 1.2rem;
     font-weight: 900;
     margin-top: -4%;
     color: white;
 }
-.imgOfInstruments{
+
+.imgOfInstruments {
     display: flex;
     width: 100%;
     height: 90%;
     justify-content: center;
     align-items: center;
 }
-.imgOfInstruments img{
+
+.imgOfInstruments img {
     width: 45%;
 }
 
@@ -142,18 +154,18 @@ body::-webkit-scrollbar-thumb {
 }
 
 .divSignUp h1 {
-    color:rgba(9, 55, 67, 0.688);
+    color: rgba(9, 55, 67, 0.688);
 }
 
-.divsInputs{
+.divsInputs {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width:100%;
+    width: 100%;
 }
 
-.iconInputsLabel1{
+.iconInputsLabel1 {
     position: absolute;
     right: 33%;
     top: 20.5%;
@@ -161,7 +173,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0;
 }
 
-.iconInputsLabel2{
+.iconInputsLabel2 {
     position: absolute;
     right: 33%;
     top: 32.5%;
@@ -170,7 +182,7 @@ body::-webkit-scrollbar-thumb {
     border: 0;
 }
 
-.iconInputsLabel3{
+.iconInputsLabel3 {
     position: absolute;
     right: 33%;
     top: 44.5%;
@@ -179,7 +191,7 @@ body::-webkit-scrollbar-thumb {
     border: 0;
 }
 
-.iconInputsLabel4{
+.iconInputsLabel4 {
     position: absolute;
     right: 33%;
     top: 56.5%;
@@ -188,11 +200,12 @@ body::-webkit-scrollbar-thumb {
     border: 0;
 }
 
-.iconInputsLabelAcept{
+.iconInputsLabelAcept {
     position: relative;
     right: 26%;
     top: 45%;
 }
+
 .inputSign {
     margin-bottom: 5%;
     font-size: 1rem;
@@ -202,7 +215,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border: 2px solid rgba(11, 70, 84, 0.25);
     outline: transparent;
-    
+
 }
 
 .inputError {
@@ -221,9 +234,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* input sem erro */
-.msgError{
+.msgError {
     display: none;
-    position:fixed;
+    position: fixed;
     font-size: 1.1rem;
     left: 60.5%;
     margin: 0;
@@ -232,8 +245,8 @@ body::-webkit-scrollbar-thumb {
     border: 0;
 }
 
-.msgErrorActive{
-    position:fixed;
+.msgErrorActive {
+    position: fixed;
     font-size: 1.1rem;
     left: 64.5%;
     margin: 0;
@@ -242,7 +255,8 @@ body::-webkit-scrollbar-thumb {
     border: 0;
     color: red;
 }
-.simbolError{
+
+.simbolError {
     display: none;
     position: relative;
     right: -25%;
@@ -266,8 +280,8 @@ body::-webkit-scrollbar-thumb {
     outline: green;
 }
 
-.msgErrorAcept{
-    position:fixed;
+.msgErrorAcept {
+    position: fixed;
     font-size: 1.1rem;
     left: 64.5%;
     margin: 0;
@@ -277,23 +291,28 @@ body::-webkit-scrollbar-thumb {
     color: green;
 }
 
-.divSignUp h3{
+.divSignUp h3 {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.divSignUp a{
+.divSignUp h1{
+    color: rgb(44, 43, 43);
+}
+
+.divSignUp a {
     color: #736F45;
     text-decoration: none;
 }
 
-.divSignUp a:hover{
+.divSignUp a:hover {
     text-decoration: underline;
 }
+
 
 .buttonSignUp {
     font-size: 1.1rem;
     color: white;
-    background-color: #736F45;
+    background-color: rgb(44, 43, 43);
     margin-top: 4%;
     width: 60%;
     height: 8%;
@@ -303,13 +322,14 @@ body::-webkit-scrollbar-thumb {
     border-radius: 11.8264px;
     margin-bottom: 5%;
     cursor: pointer;
+    transition: 300ms;
 }
 
 
 .buttonSignUp:hover {
     font-size: 1.1rem;
     color: white;
-    background-color: #59563b;
+    background-color: rgb(23, 23, 23);
     margin-top: 4%;
     width: 60%;
     height: 8%;
@@ -319,5 +339,3 @@ body::-webkit-scrollbar-thumb {
     border-radius: 11.8264px;
     margin-bottom: 5%;
 }
-
-

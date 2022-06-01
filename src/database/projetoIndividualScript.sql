@@ -7,9 +7,17 @@ create table instrumento (
     nomeInstrumento varchar(30)
 );
  insert into instrumento values
- (null,"violão"),
- (null,"violino");
+ (null,"Violão"),
+ (null,"Violino"),
+ (null,"Piano"),
+ (null,"Bateria"),
+ (null,"Guitarra"),
+ (null,"Flauta"),
+ (null,"Baixo"),
+ (null,"Banjo"),
+ (null,"Saxofone");
  
+ select * from instrumento;
 create table usuario(
 	idUsuario int primary key auto_increment,
     nomeUsuario varchar(70),
@@ -18,11 +26,9 @@ create table usuario(
     fkInstrumento int ,
     foreign key(fkinstrumento) references instrumento(idInstrumento)
 );
-insert into usuario values
-(null,"Matheus","matheus@gmail.com",12345,2),
-(null,"julio","julio@gmail.com",12345,1)
-;
-
+   insert into usuario values
+   (null,"Matheus","matheus@gmail.com",12345,5);
+ 
 create table mensagem(
 	idMensagem int primary key auto_increment,
     conteudoMensagem varchar(500),
@@ -37,8 +43,9 @@ create table cover(
     foreign key (fkUsuario) references usuario(idUsuario)
 );
 
-select * from mensagem;
- select * from usuario;
+
 
  select nomeInstrumento,count(fkInstrumento) from instrumento join usuario on instrumento.idinstrumento = usuario.fkinstrumento group by nomeInstrumento;
  select count(idUsuario) from usuario;
+ select * from mensagem;
+ select * from usuario;
