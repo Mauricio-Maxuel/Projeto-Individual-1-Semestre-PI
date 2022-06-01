@@ -61,7 +61,7 @@ header nav {
 
 .navigation ul {
     display: flex;
-    gap: 3%;
+    gap: 7%;
 }
 
 .navigation ul a {
