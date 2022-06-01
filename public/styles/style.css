@@ -146,6 +146,11 @@ header nav {
     cursor: pointer;
 }
 
+.btnGradient a{
+    color: white;
+    text-decoration: none;
+}
+
 .btnGradient:hover {
     background: linear-gradient(93.03deg, #CFC44B 2.51%, rgba(36, 34, 17, 0.66) 80.11%);
 }
@@ -373,6 +378,11 @@ header nav {
     grid-area: homeMusic;
     overflow: hidden;
     width: 100%;
+    background-image: url(https://i.ytimg.com/vi/DHEOF_rcND8/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    background-size: 168%;
+    background-position: center top;
+    cursor: pointer;
 }
 
 .div1 img{
@@ -380,8 +390,13 @@ header nav {
     height: 65%;
 }
 .div2{
-    grid-area:jeteMusic ;
+    grid-area:jeteMusic;
     overflow: hidden;
+    background-image: url(https://cdns-images.dzcdn.net/images/cover/1af2ff9c749201f12273ee81c7c1d5c5/500x500.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center bottom;
+    cursor: pointer;
 }
 .div2 img{
     width: 100%;
@@ -389,6 +404,14 @@ header nav {
 }
 .div3{
     grid-area: houseMusic;
+    background-image: url(https://i.ytimg.com/vi/orjH3QA12x0/mqdefault.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    width: 100%;
+    height: 40vh;
+    cursor: pointer;
+
 }
 .div3 img{
     width: 100%;
@@ -396,6 +419,11 @@ header nav {
 }
 .div4{
     grid-area: nothingMusic;
+    background-image: url(https://i.ytimg.com/vi/tAGnKpE4NCI/hqdefault.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center top;
+    cursor: pointer;
 }
 .div4 img{
     width: 100%;
@@ -403,6 +431,12 @@ header nav {
 }
 .div5{
     grid-area: theLastMusic;
+    background-image: url(https://i.ytimg.com/vi/Ou8zCdy49LE/maxresdefault.jpg);
+    background-repeat: no-repeat;
+    height: 50vh;
+    background-size: 100%;
+    background-position: center center;
+    cursor: pointer;
 }
 .div5 img{
     width: 100%;
@@ -437,6 +471,12 @@ header nav {
     padding: 2%;
     background-color: white;
     border-radius: 30px;
+}
+
+
+.divCardTools p{
+    font-size: 1rem;
+    font-weight: 700;
 }
 .guitar{
     display: flex;

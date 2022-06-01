@@ -59,7 +59,7 @@
             </h3>
 
             <div class="buttons">
-                <button class="btnGradient">Comunidade</button>
+                <button class="btnGradient"><a href="login.html">Comunidade</a></button>
                 <button class="btnSimulador"><img src="assets/imgs/Polygon 1.png" alt=""> Simulador</button>
             </div>
         </div>
@@ -76,7 +76,8 @@
         <h1>Beneficios de aprender <br> a tocar um instrumento</h1>
         <div class="divCardsBenefits">
             <div class="cardBenefits item1">
-                <img id="imgbenefits1" class="cardImgBenefits cardImgBenefitsFirst" src="assets/imgs/amnesia 1.png" alt="">
+                <img id="imgbenefits1" class="cardImgBenefits cardImgBenefitsFirst" src="assets/imgs/amnesia 1.png"
+                    alt="">
                 <h2>Melhora a memória</h2>
                 <p>São inúmeras as pesquisas que ligam a música e o tocar um instrumento ou cantar a uma memória mais
                     afiada. O fato de estudar música (e todos seus elementos, como cifras ou partituras) exercita a
@@ -108,21 +109,24 @@
         <h1>Algumas musicas para aprender no violão</h1>
 
         <div class="divGridMusics">
-            <div class="div1">
-                <img src="https://i.ytimg.com/vi/DHEOF_rcND8/maxresdefault.jpg" alt="">
+            <div id="mymusic" onclick="open1()" class="div1">
+                <!-- <img src="https://i.ytimg.com/vi/DHEOF_rcND8/maxresdefault.jpg" alt=""> -->
             </div>
 
-            <div class="div2"><img
-                    src="https://cdns-images.dzcdn.net/images/cover/1af2ff9c749201f12273ee81c7c1d5c5/500x500.jpg"
-                    alt=""></div>
+            <div class="div2" onclick="open2()">
+                <!-- <img src="https://cdns-images.dzcdn.net/images/cover/1af2ff9c749201f12273ee81c7c1d5c5/500x500.jpg"
+                    alt=""> -->
+            </div>
 
-            <div class="div3">
-                <img src="https://i.ytimg.com/vi/orjH3QA12x0/mqdefault.jpg" alt="">
+            <div class="div3" onclick="open3()">
+                <!-- <img src="https://i.ytimg.com/vi/orjH3QA12x0/mqdefault.jpg" alt=""> -->
             </div>
-            <div class="div4">
-                <img src="https://i.ytimg.com/vi/tAGnKpE4NCI/hqdefault.jpg" alt="">
+            <div class="div4" onclick="open4()">
+                <!-- <img src="https://i.ytimg.com/vi/tAGnKpE4NCI/hqdefault.jpg" alt=""> -->
             </div>
-            <div class="div5"><img src="https://i.ytimg.com/vi/Ou8zCdy49LE/maxresdefault.jpg" alt=""></div>
+            <div class="div5" onclick="open5()">
+                <!-- <img src="https://i.ytimg.com/vi/Ou8zCdy49LE/maxresdefault.jpg" alt=""> -->
+            </div>
         </div>
     </div>
 
@@ -130,9 +134,9 @@
         <h1>Principais ferramentas</h1>
         <div class="divToolsTop">
             <div class="divCardTools cardChord">
-                <h2>Dicionário de <br>acordes</h2>
-                <p>Aprenda exatamente onde colocar seus dedos para tocar qualquer acorde</p>
-                <a class="buttonCardTools" href=""><img src="assets/imgs/VectorForCardBenefits.png" alt=""></a>
+                <h2>Chat</h2>
+                <p>Compartilhe ideias, duvidas ou sua experiência com instrumentistas e aspirantes de todo o Brasil </p>
+                <a class="buttonCardTools" href="login.html"><img src="assets/imgs/VectorForCardBenefits.png" alt=""></a>
             </div>
 
             <div class="guitar"><img src="assets/imgs/guitar.png" alt=""></div>
@@ -140,16 +144,43 @@
             <div class="divCardTools cardSimulator">
                 <h2>Simulador</h2>
                 <p>Experimente alguns de nossos simuladores de instrumentos</p>
-                <a class="buttonCardTools" href=""><img src="assets/imgs/VectorForCardBenefits.png" alt=""></a>
+                <a class="buttonCardTools" href="login.html"><img src="assets/imgs/VectorForCardBenefits.png" alt=""></a>
             </div>
         </div>
         <div class="divCardTools cardQuiz">
-            <h2>Quiz</h2>
-            <p>Veja qual instrumento musical é mais compatível com você.</p>
-            <a class="buttonCardTools" href=""><img src="assets/imgs/VectorForCardBenefits.png" alt=""></a>
+            <h2>Covers</h2>
+            <p>Compartilhe suas obras com musicos da nossa plataforma</p>
+            <a class="buttonCardTools" href="login.html"><img src="assets/imgs/VectorForCardBenefits.png" alt=""></a>
         </div>
     </div>
 </body>
+
 </html>
 
 <script src="js/jsInStyles/toggleCardBenefits.js"></script>
+
+<script>
+    // document.getElementById("mymusic").addEventListener("mouseenter",function(link){
+    //     console.log("teste")
+    // })
+    function openLink(link){
+        return window.open(link ,"_blank")
+    }
+    function open1() {
+        openLink(`https://www.youtube.com/watch?v=8JUhqc2Z838`)
+    }
+
+    function open2() {
+        openLink(`https://www.youtube.com/watch?v=kEYWp8FJfRc`)
+    }
+    function open3() {
+        openLink(`https://www.youtube.com/watch?v=I2rSsaCPkwM`)
+    }
+    function open4() {
+        openLink(`https://www.youtube.com/watch?v=pwEm2QNWYQo`)
+    }
+    function open5() {
+        openLink(`https://www.youtube.com/watch?v=Ou8zCdy49LE`)
+    }
+    
+</script>

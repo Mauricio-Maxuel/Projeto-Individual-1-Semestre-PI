@@ -1,7 +1,6 @@
 create database projetoIndividual;
 use projetoindividual;
 
-
 create table instrumento (
 	idInstrumento int primary key auto_increment,
     nomeInstrumento varchar(30)
@@ -42,8 +41,6 @@ create table cover(
     fkusuario int,
     foreign key (fkUsuario) references usuario(idUsuario)
 );
-
-
 
  select nomeInstrumento,count(fkInstrumento) from instrumento join usuario on instrumento.idinstrumento = usuario.fkinstrumento group by nomeInstrumento;
  select count(idUsuario) from usuario;

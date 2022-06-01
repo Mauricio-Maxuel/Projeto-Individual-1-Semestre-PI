@@ -199,6 +199,8 @@ body{
     justify-content: center;
     align-items: center;
     gap: 5%;
+    margin-top: 8%;
+    /* background-color: red; */
     width: 30vw;
     height: 130vh;
 }
