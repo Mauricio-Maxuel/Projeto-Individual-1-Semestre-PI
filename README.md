@@ -10,9 +10,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações e funcion
 
 -  Landing Page
 -  Cadastro
-✔  Login
-✔  Escolha do instrumento que gosta
+- ✔  Login
+- ✔  Escolha do instrumento que gosta
 -  Simulador de Piano
-✔  Fórum entre usuários
-✔  Dashboard
+- ✔  Fórum entre usuários
+- ✔  Dashboard
   <!-- -  ✔ -->
