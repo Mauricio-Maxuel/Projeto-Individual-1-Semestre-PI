@@ -10,12 +10,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações e funcion
 
 -  Landing Page
 -  Cadastro
--  Login
--  escolha do instrumento que gosta
--  biblioteca de acordes
--  Simulador de violão
--  fórum entre usuários
--  Dashboard
+✔  Login
+✔  Escolha do instrumento que gosta
+-  Simulador de Piano
+✔  Fórum entre usuários
+✔  Dashboard
   <!-- -  ✔ -->
-
-[⬆ Voltar ao topo](#Projeto-Individual-1-Semestre-PI)<br>
