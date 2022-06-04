@@ -1,5 +1,4 @@
-
-.iconBack{
+.iconBack {
     height: 10vh;
     width: 50vw;
     margin-bottom: 15%;
@@ -7,21 +6,22 @@
     align-items: center;
     justify-content: flex-start;
 }
-.iconBack a img{
+
+.iconBack a img {
     margin-left: 2%;
     width: 10%;
     height: 10%;
 }
 
-.divImgSignIN{
-    width:100vw;
+.divImgSignIN {
+    width: 100vw;
     display: flex;
     align-items: center;
     background-color: #35352F;
     flex-direction: column;
 }
 
-.divImgSignIN img{
+.divImgSignIN img {
     width: 50vw;
     height: 50vh;
 }

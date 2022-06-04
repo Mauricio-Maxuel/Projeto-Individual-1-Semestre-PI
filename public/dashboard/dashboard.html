@@ -71,20 +71,20 @@
     <div class="ItensCardRight">
         <h3>Fundamentos da teoria musical</h3>
         <p>Aprenda os fundamentos para entender de fato o mundo da musica</p>
-        <button class="btnBanner btnGoCommunity btnCourses"><a href="https://www.youtube.com/watch?v=GJC9zdMG1UQ"target="_blank"><img src="../assets/imgsDash/right-arrow.png"
-                alt=""></a></button>
+        <button class="btnBanner btnGoCommunity btnCourses"><a href="https://www.youtube.com/watch?v=GJC9zdMG1UQ"
+                target="_blank"><img src="../assets/imgsDash/right-arrow.png" alt=""></a></button>
     </div>
     <div class="ItensCardRight">
         <h3>Exercícios para melhor no violão</h3>
         <p>Exercícios para melhora da técnica e confiança no violão.</p>
-        <button class="btnBanner btnGoCommunity btnCourses"><a href="https://www.youtube.com/watch?v=o6J59n78few"target="_blank"> <img src="../assets/imgsDash/right-arrow.png"
-                alt=""></a></button>
+        <button class="btnBanner btnGoCommunity btnCourses"><a href="https://www.youtube.com/watch?v=o6J59n78few"
+                target="_blank"> <img src="../assets/imgsDash/right-arrow.png" alt=""></a></button>
     </div>
     <div class="ItensCardRight">
         <h3>Aprenda a trocar as cordas do seu violão</h3>
         <p>não passe mais aperto e troque você mesmo.</p>
-        <button class="btnBanner btnGoCommunity btnCourses"><a href="https://www.youtube.com/watch?v=YSDJvnkIknA" target="_blank"><img src="../assets/imgsDash/right-arrow.png"
-                alt=""></a></button>
+        <button class="btnBanner btnGoCommunity btnCourses"><a href="https://www.youtube.com/watch?v=YSDJvnkIknA"
+                target="_blank"><img src="../assets/imgsDash/right-arrow.png" alt=""></a></button>
     </div>
 </div>
 </body>
@@ -200,37 +200,37 @@
 
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            if(registro.nomeInstrumento == "Violão"){
+            if (registro.nomeInstrumento == "Violão") {
                 dados.datasets[0].data.push(registro.contagemIns);
-            }else if(registro.nomeInstrumento == "Violino"){
+            } else if (registro.nomeInstrumento == "Violino") {
                 dados.datasets[1].data.push(registro.contagemIns);
             }
-            else if(registro.nomeInstrumento == "Piano"){
+            else if (registro.nomeInstrumento == "Piano") {
                 dados.datasets[2].data.push(registro.contagemIns);
             }
-            else if(registro.nomeInstrumento == "Bateria"){
+            else if (registro.nomeInstrumento == "Bateria") {
                 dados.datasets[3].data.push(registro.contagemIns);
             }
-            else if(registro.nomeInstrumento == "Guitarra"){
+            else if (registro.nomeInstrumento == "Guitarra") {
                 dados.datasets[4].data.push(registro.contagemIns);
             }
-            else if(registro.nomeInstrumento == "Flauta"){
+            else if (registro.nomeInstrumento == "Flauta") {
                 dados.datasets[5].data.push(registro.contagemIns);
             }
-            else if(registro.nomeInstrumento == "Baixo"){
+            else if (registro.nomeInstrumento == "Baixo") {
                 dados.datasets[6].data.push(registro.contagemIns);
             }
-            else if(registro.nomeInstrumento == "Banjo"){
+            else if (registro.nomeInstrumento == "Banjo") {
                 dados.datasets[7].data.push(registro.contagemIns);
             }
-            else if(registro.nomeInstrumento == "Saxofone"){
+            else if (registro.nomeInstrumento == "Saxofone") {
                 dados.datasets[8].data.push(registro.contagemIns);
             }
-            
+
 
             // dados.datasets[i].data.push(registro.contagemIns);
         }
-        dados.labels[0]=("Instrumentos Mais Escolhidos");
+        dados.labels[0] = ("Instrumentos Mais Escolhidos");
 
 
 

@@ -46,7 +46,7 @@
 
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="2"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Violino</h3>
@@ -58,7 +58,7 @@
                 </label>
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="3"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Piano</h3>
@@ -70,7 +70,7 @@
                 </label>
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="4"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Bateria</h3>
@@ -82,7 +82,7 @@
                 </label>
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="5"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Guitarra</h3>
@@ -94,7 +94,7 @@
                 </label>
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="6"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Flauta</h3>
@@ -106,7 +106,7 @@
                 </label>
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="7"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Baixo</h3>
@@ -118,7 +118,7 @@
                 </label>
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="8"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Banjo</h3>
@@ -130,7 +130,7 @@
                 </label>
                 <label class="cardYourInstruments">
                     <input name="itemInstruments" class="radioYourInstruments" id="inputInstrumento" value="9"
-                        type="radio" >
+                        type="radio">
                     <span class="contentCardYourInstruments">
                         <span class="nameOfInstruments">
                             <h3>Saxofone</h3>
@@ -140,7 +140,7 @@
                         </span>
                     </span>
                 </label>
-                
+
             </div>
         </div>
 
@@ -191,7 +191,7 @@
             <h3>já tem uma conta? <a href="login.html">Conecte-se</a> </h3>
         </div>
     </div>
-   
+
 </body>
 
 </html>
@@ -205,7 +205,7 @@
         var nomeVar = nome_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
-        var instrumentoVar =document.querySelector('input[name="itemInstruments"]:checked').value;
+        var instrumentoVar = document.querySelector('input[name="itemInstruments"]:checked').value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         var nomeVerifi = document.getElementById("nome_input");
@@ -259,7 +259,7 @@
             imgError2.style.display = "flex"
             msgError2.className = "msgErrorActive"
             msgError2.innerHTML = `insira @ no E-Mail`
-             finalizarAguardar();
+            finalizarAguardar();
             return false;
 
         } else if (emailVar.indexOf(".com") < 0) {
@@ -359,7 +359,7 @@
             msgError4.innerHTML = `Senha correta`
             // setInterval(sumirMensagem, 5000)
         }
-        
+
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -391,7 +391,7 @@
                 }, "2000")
 
                 limparFormulario();
-                
+
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }

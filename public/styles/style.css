@@ -8,15 +8,15 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 12px;       
-  }
-  
+    width: 12px;
+}
 
-  
-  body::-webkit-scrollbar-thumb {
+
+
+body::-webkit-scrollbar-thumb {
     background-color: #1c1c1d;
-    border-radius: 20px;     
-  }
+    border-radius: 20px;
+}
 
 .divWelcome {
     display: grid;
@@ -146,7 +146,7 @@ header nav {
     cursor: pointer;
 }
 
-.btnGradient a{
+.btnGradient a {
     color: white;
     text-decoration: none;
 }
@@ -154,6 +154,7 @@ header nav {
 .btnGradient:hover {
     background: linear-gradient(93.03deg, #CFC44B 2.51%, rgba(36, 34, 17, 0.66) 80.11%);
 }
+
 .btnSimulador {
     display: flex;
     justify-content: center;
@@ -240,7 +241,7 @@ header nav {
     -webkit-text-fill-color: transparent;
 }
 
-.divCardsBenefits{
+.divCardsBenefits {
     display: flex;
     justify-content: center;
     gap: 5%;
@@ -251,10 +252,10 @@ header nav {
 
 
 
-.cardBenefits{
+.cardBenefits {
     position: relative;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     width: 20%;
@@ -266,13 +267,14 @@ header nav {
     transition: 500ms;
 }
 
- 
-.cardBenefits h2,.cardBenefits p{
+
+.cardBenefits h2,
+.cardBenefits p {
     color: white;
     text-align: center;
 }
 
-.cardBenefits p{
+.cardBenefits p {
     height: 30%;
     overflow: hidden;
 }
@@ -284,67 +286,70 @@ header nav {
     left: -10%;
 }
 
-.cardImgBenefitsFirst{
+.cardImgBenefitsFirst {
     width: 35%;
     top: -35%;
     left: -10%;
 }
 
 
-.cardBenefits .imgMore{
+.cardBenefits .imgMore {
     cursor: pointer;
     margin-bottom: 3%;
     transition: 500ms;
-    
+
 }
 
-.cardBenefits .imgMore:hover{
-    transform:translate(0,20%);
+.cardBenefits .imgMore:hover {
+    transform: translate(0, 20%);
     filter: blur(1px) grayscale(100%);
 }
 
 /* classe do aumento do texto */
-.cardBenefitsactive{
+.cardBenefitsactive {
     position: relative;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     width: 20%;
-    height:120%;
+    height: 120%;
     padding: 0 2%;
     background: rgba(83, 75, 59, 0.48);
     box-shadow: 0px 4px 4px rgba(143, 133, 36, 0.42);
     border-radius: 8px;
     transition: 500ms;
 }
-.cardBenefitsactive .imgMoreActive{
+
+.cardBenefitsactive .imgMoreActive {
     cursor: pointer;
     margin-bottom: 3%;
     transition: 500ms;
     transform: rotate(180deg);
 }
 
-.cardBenefitsactive .imgMoreActive:hover{
+.cardBenefitsactive .imgMoreActive:hover {
     filter: blur(1px) grayscale(100%);
 }
 
-.cardBenefitsactive h2,.cardBenefitsactive p{
+.cardBenefitsactive h2,
+.cardBenefitsactive p {
     color: white;
     text-align: center;
 }
-.cardBenefitsactive h2{
+
+.cardBenefitsactive h2 {
     text-align: center;
 }
 
-.cardBenefitsactive p{
+.cardBenefitsactive p {
     height: 30%;
     margin-bottom: 50%;
 }
 
 /*  */
 
-.learnMusics{
+.learnMusics {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -352,29 +357,29 @@ header nav {
     height: 100vh;
 }
 
-.learnMusics h1{
+.learnMusics h1 {
     color: white;
     font-weight: 600;
     font-size: 2.5rem;
     margin-bottom: 5%;
 }
 
-.divGridMusics{
+.divGridMusics {
     display: grid;
-    grid-template-rows: repeat(2,1fr);
-    grid-template-columns: repeat(6,1fr);
-    grid-template-areas:"homeMusic homeMusic jeteMusic jeteMusic houseMusic houseMusic"
-                        "homeMusic homeMusic nothingMusic theLastMusic theLastMusic theLastMusic " ;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "homeMusic homeMusic jeteMusic jeteMusic houseMusic houseMusic"
+        "homeMusic homeMusic nothingMusic theLastMusic theLastMusic theLastMusic ";
     width: 98%;
     height: 65%;
 
     row-gap: 1.7%;
-    column-gap:0.7%;
+    column-gap: 0.7%;
 
 }
 
 
-.div1{
+.div1 {
     grid-area: homeMusic;
     overflow: hidden;
     width: 100%;
@@ -385,12 +390,13 @@ header nav {
     cursor: pointer;
 }
 
-.div1 img{
+.div1 img {
     width: 100%;
     height: 65%;
 }
-.div2{
-    grid-area:jeteMusic;
+
+.div2 {
+    grid-area: jeteMusic;
     overflow: hidden;
     background-image: url(https://cdns-images.dzcdn.net/images/cover/1af2ff9c749201f12273ee81c7c1d5c5/500x500.jpg);
     background-repeat: no-repeat;
@@ -398,11 +404,13 @@ header nav {
     background-position: center bottom;
     cursor: pointer;
 }
-.div2 img{
+
+.div2 img {
     width: 100%;
     height: 100%;
 }
-.div3{
+
+.div3 {
     grid-area: houseMusic;
     background-image: url(https://i.ytimg.com/vi/orjH3QA12x0/mqdefault.jpg);
     background-repeat: no-repeat;
@@ -413,11 +421,13 @@ header nav {
     cursor: pointer;
 
 }
-.div3 img{
+
+.div3 img {
     width: 100%;
     height: 100%;
 }
-.div4{
+
+.div4 {
     grid-area: nothingMusic;
     background-image: url(https://i.ytimg.com/vi/tAGnKpE4NCI/hqdefault.jpg);
     background-repeat: no-repeat;
@@ -425,11 +435,13 @@ header nav {
     background-position: center top;
     cursor: pointer;
 }
-.div4 img{
+
+.div4 img {
     width: 100%;
     height: 41%;
 }
-.div5{
+
+.div5 {
     grid-area: theLastMusic;
     background-image: url(https://i.ytimg.com/vi/Ou8zCdy49LE/maxresdefault.jpg);
     background-repeat: no-repeat;
@@ -438,12 +450,13 @@ header nav {
     background-position: center center;
     cursor: pointer;
 }
-.div5 img{
+
+.div5 img {
     width: 100%;
     height: 80%;
 }
 
-.divTools{
+.divTools {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -452,18 +465,18 @@ header nav {
     margin-top: 15%;
 }
 
-.divTools h1{
+.divTools h1 {
     font-size: 3rem;
     color: #CE9E23;
 }
 
-.divToolsTop{
+.divToolsTop {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.divCardTools{
+.divCardTools {
     display: flex;
     flex-direction: column;
     width: 15%;
@@ -474,29 +487,33 @@ header nav {
 }
 
 
-.divCardTools p{
+.divCardTools p {
     font-size: 1rem;
     font-weight: 700;
 }
-.guitar{
+
+.guitar {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.guitar img{
+
+.guitar img {
     width: 80%;
     margin-bottom: 10%;
 }
-.cardChord h2{
+
+.cardChord h2 {
     margin: 0;
     margin-bottom: 10%;
 }
-.cardChord p{
+
+.cardChord p {
     margin: 0;
     margin-bottom: 15%;
 }
 
-.buttonCardTools{
+.buttonCardTools {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -506,23 +523,25 @@ header nav {
     background-color: white;
     transition: 500ms;
 }
-.buttonCardTools:hover{
-    transform: translate(10%,0);
+
+.buttonCardTools:hover {
+    transform: translate(10%, 0);
 }
 
-.buttonCardTools img{
+.buttonCardTools img {
     transform: rotate(-90deg);
     width: 50%;
     filter: brightness(.4);
 }
-.cardChord{
-    background-color:#F0D48A ;
+
+.cardChord {
+    background-color: #F0D48A;
 }
 
-.cardSimulator{
-    background-color:#8AF0BF ;
+.cardSimulator {
+    background-color: #8AF0BF;
 }
-.cardQuiz{
+
+.cardQuiz {
     background-color: #ABF08A;
 }
-

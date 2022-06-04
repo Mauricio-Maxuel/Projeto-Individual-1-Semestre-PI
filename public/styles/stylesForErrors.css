@@ -1,9 +1,9 @@
-.divError{
+.divError {
     position: absolute;
     width: 10%;
 }
 
-.divError h3{
+.divError h3 {
     display: none;
     position: fixed;
     left: 65%;
@@ -13,13 +13,11 @@
     border: 0;
 }
 
-
-
-.loading-div{
+.loading-div {
     display: none;
 }
 
-.divError img{
+.divError img {
     position: fixed;
     left: 75%;
     bottom: 14%;
@@ -32,16 +30,16 @@
     width: 80px;
 }
 
- #mensagem_erro img {
+#mensagem_erro img {
     /* display: none; */
     position: relative;
     left: 30%;
     margin-top: 310%;
     width: 50px;
     bottom: -100%;
- } 
+}
 
- /* .imgConfirmation{
+/* .imgConfirmation{
     position: relative;
     left: 30%;
     margin-top: 310%;

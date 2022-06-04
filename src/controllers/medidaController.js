@@ -1,6 +1,6 @@
 var medidaModel = require("../models/medidaModel");
 
-function buscarQuantidadeInstrumentos(req,res){
+function buscarQuantidadeInstrumentos(req, res) {
     const limite_linhas = 7;
 
     // var idInstrumento = req.params.idInstrumento;
@@ -20,7 +20,7 @@ function buscarQuantidadeInstrumentos(req,res){
     });
 }
 
-function buscarQuantidadeUsuarios(req,res){
+function buscarQuantidadeUsuarios(req, res) {
     const limite_linhas = 7;
 
     // var idInstrumento = req.params.idInstrumento;

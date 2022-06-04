@@ -63,21 +63,7 @@
                         <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/0XIqH9DfpIc"></iframe>
                     </div>
                 </div>
-                <div class="divCoverUserVideo">
-                    <h2>Mauricio</h2>
-                    <div class="divItemCover">
-                        <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/AXrz6bG5jgI"></iframe>
-                    </div>
-                </div>
-                <div class="divCoverUserVideo">
-                    <h2>Mauricio</h2>
-                    <div class="divItemCover">
-                        <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/8F_X-hIhTQs"></iframe>
-                    </div>
-                </div> -->
-                <!-- <div class="divItemCover">
-                    <iframe class="iframe" src="https://www.youtube-nocookie.com/embed/CVHnsH5m_Tk"></iframe>
-                </div> -->
+            -->
             </div>
 
             <div class="divsubmitCover">
@@ -89,12 +75,6 @@
                         <i class="fa fa-solid fa-plus"></i>
                     </button>
                 </form>
-                <!-- <input maxlength="50" autocomplete="off" placeholder="teste" class="myLink" type="text"
-                        id="inputTeste">
-
-                    <button  onclick="teste()">
-                        enviar link
-                    </button> -->
             </div>
         </div>
     </div>
@@ -105,30 +85,6 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    function teste(){
-        var teste = inputTeste.value
-
-        if(teste == ""){
-            alert("texto vazio")
-        }else if(teste.length>43){
-            alert("link inválido")
-        }else if(teste.length<31){
-            alert("link inválido")
-        }else{
-            var j = (teste.indexOf("v="))+2
-            var limite = j+11
-            var lista = []
-            for(;j<limite;j++){
-                lista.push(teste[j])
-            }
-          lista = lista.join("")
-            console.log(lista)
-        }   
-
-        // console.log(teste)
-    }
-
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
@@ -136,24 +92,24 @@
     function publicar() {
         var linkTratado = inputGetLink.value
         // var linkTratado = link.slice(-11)
-    
 
-        if(linkTratado == ""){
+
+        if (linkTratado == "") {
             alert("Insira um link do youtube")
             return false
-        }else if(linkTratado.length>50){
+        } else if (linkTratado.length > 50) {
             alert("link muito grande")
-        }else if(linkTratado.length<31){
+        } else if (linkTratado.length < 31) {
             alert("link inválido")
             return false
-        }else{
-            var intervalBeggin = (linkTratado.indexOf("v="))+2
-            var intervalEnd = intervalBeggin+11
+        } else {
+            var intervalBeggin = (linkTratado.indexOf("v=")) + 2
+            var intervalEnd = intervalBeggin + 11
             var arrayOfIdVideo = []
-            for(;intervalBeggin<intervalEnd;intervalBeggin++){
+            for (; intervalBeggin < intervalEnd; intervalBeggin++) {
                 arrayOfIdVideo.push(linkTratado[intervalBeggin])
             }
-          linkTratado = arrayOfIdVideo.join("")
+            linkTratado = arrayOfIdVideo.join("")
             // console.log(lista)
         }
 

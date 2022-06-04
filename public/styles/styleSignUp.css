@@ -56,7 +56,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contentYourInstrument {
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     display: flex;
     width: 70%;
     height: 65vh;
@@ -295,7 +295,7 @@ body::-webkit-scrollbar-thumb {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.divSignUp h1{
+.divSignUp h1 {
     color: rgb(44, 43, 43);
 }
 
