@@ -49,3 +49,30 @@ btn3.addEventListener('click', function () {
     imgBenefits3.style.display = "block"
   }
 });
+
+
+// abrindo os link
+function openLink(link) {
+  return window.open(link, "_blank")
+}
+
+function open1() {
+  openLink(`https://www.youtube.com/watch?v=8JUhqc2Z838`)
+}
+
+function open2() {
+  openLink(`https://www.youtube.com/watch?v=kEYWp8FJfRc`)
+}
+function open3() {
+  openLink(`https://www.youtube.com/watch?v=I2rSsaCPkwM`)
+}
+function open4() {
+  openLink(`https://www.youtube.com/watch?v=pwEm2QNWYQo`)
+}
+function open5() {
+  openLink(`https://www.youtube.com/watch?v=Ou8zCdy49LE`)
+}
+
+function openLogin(){
+  openLink("login.html")
+}

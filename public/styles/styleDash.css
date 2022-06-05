@@ -60,7 +60,7 @@ body {
 .divImgBanner {
     width: 68%;
     height: 100%;
-    background-image: url(../assets/imgsDash/guitarBanner.jpg);
+    background-image: url(https://img.freepik.com/fotos-gratis/mulher-tocando-piano_107420-12168.jpg?t=st=1654444558~exp=1654445158~hmac=df46f9c3bc1f21d70dd9ab52c2be4c07f61b66b655dc0e1c3e1609cfe9cef63b&w=740);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 50% 80%;
@@ -68,7 +68,7 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 35px;
-    color: white;
+    color: black;
     margin-right: 3%;
 }
 
