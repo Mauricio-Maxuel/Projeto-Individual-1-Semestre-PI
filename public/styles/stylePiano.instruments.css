@@ -52,7 +52,29 @@ body::-webkit-scrollbar-thumb {
     color: rgb(153, 153, 154);
     font-family: 'Lobster';
 }
+.divLogsOfInstrument{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    align-items: center;
+    margin-left: 15%;
+    width: 20%;
+    height: 200%;
+    
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.469);
+    margin-top: 5%;
+}
 
+.divLogsOfInstrument::-webkit-scrollbar {
+    width: 12px;
+}
+
+.divLogsOfInstrument::-webkit-scrollbar-thumb {
+    background-color: #343434;
+    border-radius: 20px;
+}
 .styNotaAtual {
     /* background-color: red; */
     height: 30%;

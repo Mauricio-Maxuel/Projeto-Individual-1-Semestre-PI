@@ -37,35 +37,37 @@
 // window.addEventListener("keydown", playNote);
 
 
-
-
-
-
-
-
-
-
-
-
 var teste2 = []
 // const notaAtual = document.querySelectorAll(".divItemTeclas");
 var divAtual = document.getElementById("notaAtual")
-
+var logs = document.getElementById("divLogsOfInstrument1")
 const chord = document.getElementById("teste")
 
 function tocarAcorde(e) {
+    
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
     const nota = document.querySelector(`.divItemTeclas[data-key="${e.keyCode}"]`)
     // var MediaAcordeMin = (cont/60)
 
     const actuChord = nota.getAttribute("data-nota")
     teste2.push(actuChord)
+    if(audio){
+        logs.innerHTML=""
+        for(var i = 0; i< teste2.length;i++){
+            logs.innerHTML += `${teste2[i]} <br>`
+        }
+    }
+   
     console.log(teste2)
+   
     audio.currentTime = 0;
     audio.play();
     // console.log(actuChord)
     divAtual.innerHTML = actuChord
-
 }
+
+
+
+
 
 window.addEventListener("keydown", tocarAcorde)
