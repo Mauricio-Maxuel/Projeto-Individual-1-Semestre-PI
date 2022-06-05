@@ -8,11 +8,11 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações e funcionalidades serão voltadas nas seguintes tarefas:
 
--  Landing Page
--  Cadastro
+- ✔  Landing Page
+- ✔  Cadastro
 - ✔  Login
 - ✔  Escolha do instrumento que gosta
--  Simulador de Piano
+- ✔  Simulador de Piano
 - ✔  Fórum entre usuários
 - ✔  Dashboard
   <!-- -  ✔ -->
