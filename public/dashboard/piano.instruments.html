@@ -5,24 +5,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../assets/imgs/YMusicFontColor.png" type="image/x-icon">
+    <!-- links -->
+    <!-- link dos scripts js -->
+
+    <!-- link fontAwesome -->
+    <script src="https://kit.fontawesome.com/0de1e0c120.js" crossorigin="anonymous"></script>
+
+    <!-- link css -->
+    <link rel="stylesheet" href="../styles/stylePiano.instruments.css">
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Instrumentos | Piano</title>
 </head>
 
 <body>
+
+    <div class="divReturn">
+        <a href="./dashboard.html"><img src="../assets/imgs/backIcon.png" alt=""></a>
+    </div>
+
+    <div class="divTitleOfInstrument">
+        Piano
+    </div>
+    <div class="contentPian">
+        <div class="divPian">
+            <div id="notaAtual" class="styNotaAtual"></div>
+            <div class="headPian"></div>
+            <div class="contentTeclas">
+                <div data-key="65" data-nota="C - Dó" class="divItemTeclas">
+                    <span class="letra">A</span>
+                </div>
+                <div data-key="87" data-nota="C# - Dó sustenido" data-cod="a" class="divItemTeclas teclaSustenidoBemol">
+                    <span class="letra">W</span>
+                </div>
+                <div data-key="83" data-nota="D - Ré" class="divItemTeclas">
+                    <span class="letra">S</span>
+                </div>
+                <div data-key="69" data-nota="D# - Ré sustenido" data-cod="b" class="divItemTeclas teclaSustenidoBemol">
+                    <span class="letra">E</span>
+                </div>
+                <div data-key="68" data-nota="E - Mi" class="divItemTeclas">
+                    <span class="letra">D</span>
+                </div>
+
+                <div data-key="70" data-nota="F - Fá" class="divItemTeclas">
+                    <span class="letra">F</span>
+                </div>
+                <div data-key="84" data-nota="F# - Fá sustenido" data-cod="c" class="divItemTeclas teclaSustenidoBemol">
+                    <span class="letra">T</span>
+                </div>
+                <div data-key="71" data-nota="G - Sol" class="divItemTeclas">
+                    <span class="letra">G</span>
+                </div>
+                <div data-key="89" data-nota="G# - Sol sustenido" data-cod="d" class="divItemTeclas teclaSustenidoBemol">
+                    <span class="letra">Y</span>
+                </div>
+                <div data-key="72" data-nota="A - Lá" class="divItemTeclas">
+                    <span class="letra">H</span>
+                </div>
+                <div data-key="85" data-nota="A# - lá sustenido" data-cod="e" class="divItemTeclas teclaSustenidoBemol">
+                    <span class="letra">U</span>
+                </div>
+                <div data-key="74" data-nota="B - Si" class="divItemTeclas">
+                    <span class="letra">J</span>
+                </div>
+
+                <div data-key="75" data-nota="C - Dó" class="divItemTeclas">
+                    <span class="letra">K</span>
+                </div>
+                <div data-key="79" data-nota="C# - Dó sustenido" data-cod="f" class="divItemTeclas teclaSustenidoBemol">
+                    <span class="letra">O</span>
+                </div>
+                <div data-key="76" data-nota="D - Ré" class="divItemTeclas">
+                    <span class="letra">L</span>
+                </div>
+                <div data-key="80" data-nota="D# - Ré sustenido" data-cod="g" class="divItemTeclas teclaSustenidoBemol">
+                    <span class="letra">P</span>
+                </div>
+                <div data-key="186" data-nota="E - Mi " class="divItemTeclas">
+                    <span class="letra">Ç</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- audios -->
+    <audio data-key="65" src="http://carolinegabriel.com/demo/js-keyboard/sounds/040.wav"></audio>
+    <audio data-key="87" src="http://carolinegabriel.com/demo/js-keyboard/sounds/041.wav"></audio>
+    <audio data-key="83" src="http://carolinegabriel.com/demo/js-keyboard/sounds/042.wav"></audio>
+    <audio data-key="69" src="http://carolinegabriel.com/demo/js-keyboard/sounds/043.wav"></audio>
+    <audio data-key="68" src="http://carolinegabriel.com/demo/js-keyboard/sounds/044.wav"></audio>
+    <audio data-key="70" src="http://carolinegabriel.com/demo/js-keyboard/sounds/045.wav"></audio>
+    <audio data-key="84" src="http://carolinegabriel.com/demo/js-keyboard/sounds/046.wav"></audio>
+    <audio data-key="71" src="http://carolinegabriel.com/demo/js-keyboard/sounds/047.wav"></audio>
     <audio data-key="89" src="http://carolinegabriel.com/demo/js-keyboard/sounds/048.wav"></audio>
-    <button onclick="teste()"></button>
+    <audio data-key="72" src="http://carolinegabriel.com/demo/js-keyboard/sounds/049.wav"></audio>
+    <audio data-key="85" src="http://carolinegabriel.com/demo/js-keyboard/sounds/050.wav"></audio>
+    <audio data-key="74" src="http://carolinegabriel.com/demo/js-keyboard/sounds/051.wav"></audio>
+    <audio data-key="75" src="http://carolinegabriel.com/demo/js-keyboard/sounds/052.wav"></audio>
+    <audio data-key="79" src="http://carolinegabriel.com/demo/js-keyboard/sounds/053.wav"></audio>
+    <audio data-key="76" src="http://carolinegabriel.com/demo/js-keyboard/sounds/054.wav"></audio>
+    <audio data-key="80" src="http://carolinegabriel.com/demo/js-keyboard/sounds/055.wav"></audio>
+    <audio data-key="186" src="http://carolinegabriel.com/demo/js-keyboard/sounds/056.wav"></audio>
 </body>
 
 </html>
 
-<script>
-
-    function teste() {
-        var audio = new Audio('http://carolinegabriel.com/demo/js-keyboard/sounds/048.wav')
-
-
-
-
-    }
-
-</script>
+<script src="../js/jsOfInstruments/pian.js"></script>
